@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Garage Door Repair & Installation | Local Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50 overflow-x-hidden">
+
+    <!-- Sticky Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tight flex items-center text-slate-800">
+                <i class="fa-solid fa-warehouse mr-2 text-blue-600"></i>
+                Elite<span class="text-blue-600">Garage</span>
+            </div>
+            <!-- Dynamic Local Phone Number -->
+            <div class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-bold transition-all duration-300 flex items-center shadow-lg hover:shadow-blue-500/50 hover:-translate-y-0.5">
+                <i class="fa-solid fa-phone-volume mr-2 animate-pulse"></i>
+                <a href="tel:+18005550199" id="dynamic-phone-number">Calling Local Dispatch...</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Lead Capture Form -->
+    <section class="relative bg-slate-900 pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1605814003058-29007f59d5dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Modern Garage Door" class="w-full h-full object-cover object-center">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/40"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                
+                <!-- Hero Text -->
+                <div class="lg:w-3/5 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="inline-block bg-blue-600/20 border border-blue-500/30 text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+                        <i class="fa-solid fa-clock mr-1"></i> 24/7 Emergency Service Available
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+                        Fast, Reliable Garage Door <span class="text-blue-500">Repair & Installation</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl font-light">
+                        Broken spring? Door off track? Or looking for a brand new upgrade? Our certified local technicians arrive fully equipped to fix your problem today.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <div class="flex items-center text-slate-200">
+                            <i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Same-Day Service
+                        </div>
+                        <div class="flex items-center text-slate-200">
+                            <i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Upfront Pricing
+                        </div>
+                        <div class="flex items-center text-slate-200">
+                            <i class="fa-solid fa-check-circle text-green-500 mr-2"></i> Fully Licensed & Insured
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lead Capture Form -->
+                <div class="lg:w-2/5 w-full max-w-md" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border-t-4 border-blue-600">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2 text-center">Get a Free Quote</h3>
+                        <p class="text-slate-500 text-sm text-center mb-6">Fill out the form and our dispatch team will call you instantly.</p>
+                        
+                        <form action="#" method="POST" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+                                <input type="text" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="(555) 000-0000">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">ZIP Code</label>
+                                <input type="text" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors" placeholder="e.g. 90210">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-1">Service Needed</label>
+                                <select class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-colors bg-white">
+                                    <option>Repair Broken Spring</option>
+                                    <option>Fix Opener / Motor</option>
+                                    <option>Door Off Track</option>
+                                    <option>New Door Installation</option>
+                                    <option>Other / Not Sure</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg mt-4">
+                                Request Service Now
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Specific Services Breakdown -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Everything Your Garage Door Needs</h2>
+                <div class="w-24 h-1.5 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Broken Springs -->
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-slate-50 rounded-xl p-8 border border-slate-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-white shadow-sm rounded-lg flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-compress-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Broken Springs</h3>
+                    <p class="text-slate-600 text-sm">Torsion and extension spring replacement using high-cycle, durable parts to restore perfect balance.</p>
+                </div>
+
+                <!-- Opener Repair -->
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-slate-50 rounded-xl p-8 border border-slate-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-white shadow-sm rounded-lg flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-car-battery"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Opener & Motors</h3>
+                    <p class="text-slate-600 text-sm">Fixing unresponsive remotes, grinding motors, and sensor issues. We service LiftMaster, Genie, and more.</p>
+                </div>
+
+                <!-- Off-Track Repair -->
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-slate-50 rounded-xl p-8 border border-slate-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-white shadow-sm rounded-lg flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-arrows-alt-v"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Off-Track Doors</h3>
+                    <p class="text-slate-600 text-sm">Dangerous off-track doors safely re-aligned. We repair bent tracks, snapped cables, and worn rollers.</p>
+                </div>
+
+                <!-- New Installation -->
+                <div data-aos="fade-up" data-aos-delay="400" class="bg-slate-50 rounded-xl p-8 border border-slate-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-white shadow-sm rounded-lg flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">New Installations</h3>
+                    <p class="text-slate-600 text-sm">Upgrade your home's curb appeal with modern, insulated, and custom-designed garage doors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Trust Block -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Why Trust Our Garage Experts?</h2>
+                    <p class="text-blue-100 text-lg mb-8">A malfunctioning garage door is a major security risk and safety hazard. Our dispatch team is trained to assess your emergency instantly and send the nearest qualified technician straight to your driveway.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-lg">
+                            <i class="fa-solid fa-shield-halved text-green-400 mr-4 text-2xl"></i> Fully Stocked Service Trucks
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <i class="fa-solid fa-user-tie text-green-400 mr-4 text-2xl"></i> Vetted & Highly Trained Techs
+                        </li>
+                        <li class="flex items-center text-lg">
+                            <i class="fa-solid fa-file-invoice-dollar text-green-400 mr-4 text-2xl"></i> No Hidden Fees
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 flex text-xl">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="ml-3 font-semibold">5.0 Average Rating</span>
+                        </div>
+                        <p class="italic text-blue-50 mb-4">"My spring snapped on a Sunday morning and my car was trapped. I called, spoke to a very knowledgeable dispatcher, and a tech arrived in under an hour. Fast, professional, and fairly priced. Highly recommend!"</p>
+                        <div class="font-bold">- Sarah M., Local Resident</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="py-20 bg-slate-900 text-center">
+        <div class="container mx-auto px-6" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">Don't Let a Broken Garage Door Slow You Down</h2>
+            <p class="text-slate-400 mb-10 max-w-2xl mx-auto text-lg">Call now for an immediate consultation or to schedule a diagnostic visit from our local experts.</p>
+            <a href="tel:+18005550199" class="inline-flex items-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full text-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] hover:-translate-y-1">
+                <i class="fa-solid fa-phone mr-3"></i> Call Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-500 py-8 text-center text-sm">
+        <div class="container mx-auto px-6">
+            <p>&copy; 2026 EliteGarage Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+            easing: 'ease-out-cubic'
+        });
+
+        // Dynamic local phone number generation
+        function generateLocalPhoneNumber() {
+            const phoneElement = document.getElementById('dynamic-phone-number');
+            setTimeout(() => {
+                const localizedNumber = "(214) 555-0199"; 
+                phoneElement.innerText = localizedNumber;
+                phoneElement.parentElement.href = "tel:+12145550199";
+                phoneElement.previousElementSibling.classList.remove('animate-pulse');
+            }, 1200);
+        }
+
+        window.onload = generateLocalPhoneNumber;
+    </script>
+</body>
+</html>
