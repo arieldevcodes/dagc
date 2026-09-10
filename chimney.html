@@ -1,79 +1,360 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chimney Services | EliteHomeUSA</title>
+    <title>Chimney Sweep & Inspection Services | EliteHomeUSA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-</head>
-<body class="font-sans antialiased text-neutral-300 bg-neutral-950 overflow-x-hidden selection:bg-orange-500 selection:text-white">
+    
+    <style>
+        /* =========================================================
+           CHIMNEY HERO ANIMATIONS: Flue Scrubbing & Hearth Dynamics
+           ========================================================= */
 
-    <!-- Header -->
-    <header class="bg-neutral-950 border-b border-neutral-800 fixed top-0 left-0 w-full z-50">
+        /* 1. Heavy Wire Chimney Sweep Brush Vertical Scrubbing */
+        .animate-chimney-sweep-hero {
+            animation: chimneySweepHero 5s ease-in-out infinite alternate;
+        }
+        @keyframes chimneySweepHero {
+            0%, 10% { transform: translateY(115px); }
+            90%, 100% { transform: translateY(-115px); }
+        }
+
+        /* 2. Soot & Creosote Particles Floating Upward */
+        .animate-soot-rise-1 {
+            animation: sootRise 2.2s ease-out infinite;
+        }
+        .animate-soot-rise-2 {
+            animation: sootRise 2.2s ease-out infinite 0.7s;
+        }
+        .animate-soot-rise-3 {
+            animation: sootRise 2.2s ease-out infinite 1.4s;
+        }
+        @keyframes sootRise {
+            0% { transform: translateY(0) scale(1); opacity: 0.8; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-80px) scale(0.2); opacity: 0; }
+        }
+
+        /* 3. Hearth Flame Flicker */
+        .animate-hearth-flame {
+            animation: hearthFlame 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes hearthFlame {
+            0% { transform: scale(0.95) translateY(0); opacity: 0.85; filter: drop-shadow(0 0 8px rgba(249,115,22,0.6)); }
+            100% { transform: scale(1.1) translateY(-4px); opacity: 1; filter: drop-shadow(0 0 16px rgba(234,88,12,0.9)); }
+        }
+
+        /* 4. CSIA Laser Inspection Scanner Line */
+        .animate-inspection-scan {
+            animation: inspectionScan 3.5s linear infinite alternate;
+        }
+        @keyframes inspectionScan {
+            0% { transform: translateY(-110px); opacity: 0.2; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(110px); opacity: 0.2; }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-700 bg-slate-50 overflow-x-hidden selection:bg-orange-500 selection:text-white">
+
+    <!-- Sticky Glassmorphism Header -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold tracking-tight text-white flex items-center group">
-                <i class="fa-solid fa-arrow-left text-sm mr-4 text-neutral-500 group-hover:text-white transition-colors"></i>
-                <i class="fa-solid fa-fire-burner mr-3 text-orange-500"></i> Elite<span class="text-orange-500 font-light">Chimney</span>
+            <a href="index.html" class="text-2xl font-bold tracking-tight text-slate-900 flex items-center group cursor-pointer">
+                <i class="fa-solid fa-house-chimney-window mr-3 text-orange-600 group-hover:rotate-12 transition-transform duration-300"></i>
+                EliteHome<span class="text-orange-600 font-light">USA</span>
             </a>
-            <a href="tel:+18005550199" class="bg-orange-600 hover:bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-bold transition">
-                <i class="fa-solid fa-phone mr-2"></i> Call Dispatch
-            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider text-slate-600">
+                <a href="index.html#services" class="hover:text-orange-600 transition-colors duration-200">All Services</a>
+                <a href="#inspections" class="hover:text-orange-600 transition-colors duration-200">Inspections</a>
+                <a href="#sweeping" class="hover:text-orange-600 transition-colors duration-200">Creosote Sweeping</a>
+                <a href="#repairs" class="hover:text-orange-600 transition-colors duration-200">Masonry & Caps</a>
+            </nav>
+            <div class="bg-slate-100 border border-slate-300 hover:border-orange-600 text-slate-900 px-5 py-2 rounded-full font-bold transition-all duration-300 flex items-center shadow-sm">
+                <i class="fa-solid fa-phone mr-2 text-orange-600 animate-pulse"></i>
+                <a href="tel:+18005550199" id="dynamic-phone-number">Routing Local...</a>
+            </div>
         </div>
     </header>
 
-    <!-- Dark Hero + Form -->
-    <section class="relative pt-28 pb-24 overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row gap-12 items-center">
-            
-            <div class="lg:w-1/2" data-aos="fade-right">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Creosote Removal <br>& <span class="text-orange-500">Masonry Repair</span></h1>
-                <p class="text-neutral-400 mb-8 text-lg">Advanced Level 2 camera inspections and zero-mess sweeping protocols designed to eliminate household fire hazards instantly.</p>
+    <!-- Hero Section -->
+    <section class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden bg-white">
+        <!-- Orange Glow Background Accent -->
+        <div class="absolute top-1/4 right-10 w-96 h-96 bg-orange-100/70 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
                 
-                <ul class="space-y-4 font-mono text-sm text-neutral-400 border-l-2 border-orange-500 pl-4">
-                    <li>> DEPLOYING HEPA-FILTER VACUUMS</li>
-                    <li>> VERIFYING FLUE INTEGRITY</li>
-                    <li>> INSTALLING STAINLESS STEEL CAPS</li>
-                </ul>
+                <!-- Left Content Column -->
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <div class="inline-flex items-center space-x-2 bg-orange-50 border border-orange-200 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest text-orange-700 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-orange-600 animate-ping"></span>
+                        <span>CSIA Certified Chimney Specialists</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
+                        Certified Chimney <br><span class="text-orange-600">Sweeping & Repair</span>
+                    </h1>
+                    <p class="text-slate-600 mb-8 text-lg font-normal leading-relaxed">
+                        Protect your home from chimney fires and carbon monoxide hazards. Comprehensive Level 1-3 flue inspections, heavy creosote removal, damper replacement, and brick restoration.
+                    </p>
+                    
+                    <!-- Mechanical Feature Simulation Diagram / Banner -->
+                    <div class="bg-slate-900 rounded-2xl p-6 text-white border border-slate-800 shadow-xl mb-8">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                            <span class="text-xs font-mono text-orange-400 uppercase tracking-wider flex items-center">
+                                <i class="fa-solid fa-microchip mr-2"></i> Flue Diagnostic Status
+                            </span>
+                            <span class="text-xs font-mono bg-orange-500/20 text-orange-400 border border-orange-500/30 px-2 py-0.5 rounded">
+                                ACTIVE CLEANING
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-center font-mono text-xs">
+                            <div>
+                                <p class="text-slate-400 mb-1">CREOSOTE LEVEL</p>
+                                <p class="text-emerald-400 font-bold">0.0% (CLEARED)</p>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 mb-1">DRAFT AIRFLOW</p>
+                                <p class="text-blue-400 font-bold">100% OPTIMAL</p>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 mb-1">FLUE LINER</p>
+                                <p class="text-amber-400 font-bold">VERIFIED SAFE</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#request-form" class="bg-orange-600 hover:bg-orange-700 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-orange-600/30 text-center">
+                            Schedule Chimney Sweep
+                        </a>
+                        <a href="tel:+18005550199" class="bg-slate-100 border border-slate-300 hover:border-orange-600 text-slate-800 font-bold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center">
+                            <i class="fa-solid fa-phone text-orange-600 mr-2"></i> Immediate Dispatch
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Hero Chimney Flue Cross-Section Animation Showcase -->
+                <div class="lg:w-1/2 w-full max-w-lg" data-aos="fade-left">
+                    <div class="bg-amber-950 border-2 border-amber-900 rounded-3xl p-4 shadow-2xl relative overflow-hidden">
+                        
+                        <!-- Header Label on Frame -->
+                        <div class="flex justify-between items-center mb-3 px-2">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                <span class="text-xs font-mono text-amber-200/70 ml-2">CHIMNEY_FLUE_INSPECTION_CAM</span>
+                            </div>
+                            <span class="text-[11px] font-mono text-orange-400 bg-orange-950/80 px-2 py-0.5 rounded border border-orange-800">
+                                REAL-TIME
+                            </span>
+                        </div>
+
+                        <!-- Main Animated Chimney Container -->
+                        <div class="w-full h-96 bg-amber-900 rounded-2xl relative overflow-hidden border border-amber-800 flex flex-col justify-between p-2">
+                            
+                            <!-- Brick Wall Texture Simulation Background -->
+                            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#f97316_1px,transparent_1px)] [background-size:12px_12px]"></div>
+                            
+                            <!-- Exterior Brick Stack Flanking Borders -->
+                            <div class="absolute left-0 top-0 bottom-0 w-12 bg-amber-950 border-r border-amber-800 flex flex-col justify-around py-2 opacity-80">
+                                <div class="h-4 bg-amber-900/60 border-y border-amber-800"></div>
+                                <div class="h-4 bg-amber-900/60 border-y border-amber-800"></div>
+                                <div class="h-4 bg-amber-900/60 border-y border-amber-800"></div>
+                                <div class="h-4 bg-amber-900/60 border-y border-amber-800"></div>
+                                <div class="h-4 bg-amber-900/60 border-y border-amber-800"></div>
+                            </div>
+                            <div class="absolute right-0 top-0 bottom-0 w-12 bg-amber-950 border-l border-amber-800 flex flex-col justify-around py-2 opacity-80">
+                                <div class="h-4 bg-amber-900/60 border-y border-amber-800"></div>
+                                <div class="h-4 bg-amber-900/60 border-y border-amber-800"></div>
+                                <div class="h-4 bg-amber-900/60 border-y border-amber-800"></div>
+                                <div class="h-4 bg-amber-900/60 border-y border-amber-800"></div>
+                                <div class="h-4 bg-amber-900/60 border-y border-amber-800"></div>
+                            </div>
+
+                            <!-- Central Flue Interior Shaft -->
+                            <div class="relative z-10 mx-auto w-48 h-full bg-slate-950 border-x-2 border-amber-800/80 overflow-hidden flex flex-col justify-between items-center shadow-inner">
+                                
+                                <!-- Laser Scanner Inspection Line -->
+                                <div class="absolute inset-x-0 h-0.5 bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,1)] animate-inspection-scan z-20 pointer-events-none flex justify-end pr-2">
+                                    <span class="text-[9px] font-mono text-cyan-300 -top-3 relative bg-slate-950/80 px-1 rounded">CSIA_SCAN</span>
+                                </div>
+
+                                <!-- Soot Particles Rising Up Shaft -->
+                                <div class="absolute bottom-16 flex space-x-3 pointer-events-none z-10">
+                                    <div class="w-2 h-2 bg-orange-500 rounded-full animate-soot-rise-1"></div>
+                                    <div class="w-2.5 h-2.5 bg-slate-400 rounded-full animate-soot-rise-2"></div>
+                                    <div class="w-1.5 h-1.5 bg-amber-500 rounded-full animate-soot-rise-3"></div>
+                                </div>
+
+                                <!-- Mechanical Wire Sweep Brush (Scrubbing Action) -->
+                                <div class="relative z-20 flex flex-col items-center animate-chimney-sweep-hero my-auto">
+                                    <!-- Upper Flexible Rod Connection -->
+                                    <div class="w-1.5 h-32 bg-gradient-to-b from-slate-600 via-slate-400 to-amber-600"></div>
+                                    
+                                    <!-- Heavy Rotary/Scrubbing Brush Head -->
+                                    <div class="w-40 h-10 bg-gradient-to-r from-orange-700 via-amber-600 to-orange-700 rounded-md border-2 border-amber-300 flex items-center justify-around shadow-[0_0_20px_rgba(234,88,12,0.8)] relative">
+                                        <!-- Bristles Detail -->
+                                        <div class="w-full h-full flex items-center justify-between px-2">
+                                            <i class="fa-solid fa-bars-staggered text-amber-200 text-xs"></i>
+                                            <i class="fa-solid fa-asterisk text-white text-sm animate-spin"></i>
+                                            <i class="fa-solid fa-bars-staggered text-amber-200 text-xs"></i>
+                                        </div>
+                                    </div>
+
+                                    <!-- Lower Extension Rod -->
+                                    <div class="w-1.5 h-32 bg-gradient-to-b from-amber-600 via-slate-400 to-slate-600"></div>
+                                </div>
+
+                                <!-- Hearth Fireplace Box at Base -->
+                                <div class="w-full h-20 bg-gradient-to-t from-slate-900 via-amber-950 to-transparent border-t border-amber-900 relative flex items-end justify-center pb-2 z-10">
+                                    <!-- Fireplace Grate & Fire -->
+                                    <div class="relative flex flex-col items-center">
+                                        <!-- Flickering Flames -->
+                                        <div class="flex space-x-1 animate-hearth-flame">
+                                            <i class="fa-solid fa-fire text-orange-500 text-2xl"></i>
+                                            <i class="fa-solid fa-fire text-amber-400 text-3xl"></i>
+                                            <i class="fa-solid fa-fire text-orange-600 text-2xl"></i>
+                                        </div>
+                                        <!-- Fireplace Log Base -->
+                                        <div class="w-28 h-2.5 bg-amber-950 border border-amber-900 rounded-full mt-1"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Footer Details Bar -->
+                        <div class="mt-3 flex justify-between items-center text-xs font-mono text-amber-200/80 px-2">
+                            <span><i class="fa-solid fa-shield-halved text-orange-400 mr-1"></i> Creosote Scrubbing</span>
+                            <span>Level 1-3 Compliant</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Technical Overview Section -->
+    <section id="inspections" class="py-20 border-t border-slate-200 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Full-Scope Chimney Maintenance</h2>
+                <p class="text-slate-600 mt-3">From routine sweeps to structural masonry overhauls, our certified sweeps maintain safe venting and peak draft efficiency.</p>
             </div>
 
-            <!-- Dark Form Container -->
-            <div class="lg:w-1/2 w-full max-w-md" data-aos="fade-left">
-                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-8 shadow-[0_0_40px_rgba(0,0,0,0.8)]">
-                    <h3 class="text-2xl font-bold text-white mb-6">Book an Inspection</h3>
-                    <form action="#" method="POST" class="space-y-5 text-sm">
-                        <div>
-                            <input type="text" class="w-full bg-neutral-950 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 placeholder-neutral-600 transition" placeholder="Full Name">
-                        </div>
-                        <div>
-                            <input type="tel" class="w-full bg-neutral-950 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 placeholder-neutral-600 transition" placeholder="Phone Number">
-                        </div>
-                        <div>
-                            <select class="w-full bg-neutral-950 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition appearance-none">
-                                <option>Standard Chimney Sweep</option>
-                                <option>Level 2 Video Inspection</option>
-                                <option>Masonry/Tuckpointing</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-4 rounded-lg transition-all shadow-[0_0_15px_rgba(234,88,12,0.3)]">
-                            Secure Appointment
-                        </button>
-                    </form>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-8 hover:border-orange-500 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-2xl mb-6">
+                        <i class="fa-solid fa-magnifying-glass font-bold"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Level 1, 2 & 3 Inspections</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">High-resolution internal camera inspections to detect hidden flue liner cracks, flue blockages, and hazardous creosote buildup.</p>
+                    <ul class="text-xs font-mono text-slate-700 space-y-2 border-t border-slate-100 pt-4">
+                        <li>> Video Camera Flue Scans</li>
+                        <li>> Real Estate Transfer Inspections</li>
+                        <li>> NFPA 211 Code Compliance</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-8 hover:border-orange-500 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200" id="sweeping">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-2xl mb-6">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Stage 3 Creosote Removal</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Rotary power sweeping and chemical treatment to eliminate glazed creosote deposits that cause destructive chimney fires.</p>
+                    <ul class="text-xs font-mono text-slate-700 space-y-2 border-t border-slate-100 pt-4">
+                        <li>> HEPA Filter Dust Containment</li>
+                        <li>> Glazed Creosote Glaze Removal</li>
+                        <li>> Firebox & Damper Cleaning</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-8 hover:border-orange-500 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300" id="repairs">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-2xl mb-6">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Masonry, Caps & Dampers</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Complete exterior crown rebuilds, tuckpointing, stainless steel chimney cap installations, and energy-saving top-sealing dampers.</p>
+                    <ul class="text-xs font-mono text-slate-700 space-y-2 border-t border-slate-100 pt-4">
+                        <li>> Stainless Steel Rain Caps</li>
+                        <li>> Brick Tuckpointing & Waterproofing</li>
+                        <li>> Top-Sealing Energy Dampers</li>
+                    </ul>
                 </div>
             </div>
-            
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section id="request-form" class="py-20 bg-white border-t border-slate-200">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 shadow-xl">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900">Request Chimney Inspection or Sweep</h3>
+                    <p class="text-slate-600 text-sm mt-2">Fill out the details below to route to your certified local dispatch unit.</p>
+                </div>
+
+                <form action="#" method="POST" class="space-y-6 text-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-slate-700 text-xs font-bold mb-2 uppercase tracking-wider">Full Name</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 text-slate-900 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600 transition" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 text-xs font-bold mb-2 uppercase tracking-wider">Phone Number</label>
+                            <input type="tel" class="w-full bg-white border border-slate-300 text-slate-900 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600 transition" placeholder="(555) 000-0000">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-700 text-xs font-bold mb-2 uppercase tracking-wider">Service Needed</label>
+                        <select class="w-full bg-white border border-slate-300 text-slate-900 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-600 focus:ring-1 focus:ring-orange-600 transition">
+                            <option>Annual Chimney Sweep & Inspection</option>
+                            <option>Level 2 Video Camera Inspection</option>
+                            <option>Creosote Removal & Flue Cleaning</option>
+                            <option>Chimney Cap or Damper Repair</option>
+                            <option>Masonry Crown / Tuckpointing Repair</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-orange-600/30">
+                        Deploy Certified Chimney Technician
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-neutral-950 border-t border-neutral-800 py-10">
-        <div class="container mx-auto px-6 text-center text-neutral-500 text-sm">
-            <p>&copy; 2026 EliteHomeUSA. Precision Maintenance.</p>
+    <footer class="bg-slate-900 text-slate-400 py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2026 EliteHomeUSA. Certified Chimney Maintenance.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <script>
+        AOS.init({ once: true, offset: 50, duration: 800 });
+
+        function generateLocalPhoneNumber() {
+            setTimeout(() => {
+                const p = document.getElementById('dynamic-phone-number');
+                p.innerText = "(214) 555-0199";
+                p.parentElement.href = "tel:+12145550199";
+                p.previousElementSibling.classList.remove('animate-pulse');
+            }, 1000);
+        }
+        window.onload = generateLocalPhoneNumber;
+    </script>
 </body>
 </html>

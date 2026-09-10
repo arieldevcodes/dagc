@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dryer Vent Cleaning & Fire Safety Services | EliteHomeUSA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* =========================================================
+           DRYER VENT HERO ANIMATIONS: Rotary Brush, Lint Extraction & Airflow
+           ========================================================= */
+
+        /* 1. Rotary Vent Snake / Cable Traversing */
+        .animate-vent-snake-hero {
+            animation: ventSnakeHero 4.5s ease-in-out infinite alternate;
+        }
+        @keyframes ventSnakeHero {
+            0%, 10% { transform: translateX(-120px); }
+            90%, 100% { transform: translateX(100px); }
+        }
+
+        .animate-lint-brush-spin {
+            animation: lintBrushSpin 1.2s linear infinite;
+        }
+        @keyframes lintBrushSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* 2. Hot Exhaust Airflow Lines */
+        .animate-heat-flow-1 {
+            animation: heatFlow 1.8s ease-in-out infinite;
+        }
+        .animate-heat-flow-2 {
+            animation: heatFlow 1.8s ease-in-out infinite 0.5s;
+        }
+        .animate-heat-flow-3 {
+            animation: heatFlow 1.8s ease-in-out infinite 1s;
+        }
+        @keyframes heatFlow {
+            0% { transform: translateX(-90px); opacity: 0; }
+            50% { opacity: 0.85; }
+            100% { transform: translateX(140px); opacity: 0; }
+        }
+
+        /* 3. Dislodged Lint Particles Ejecting to Exhaust Wall Vent Cap */
+        .animate-lint-eject-1 {
+            animation: lintEject 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+        }
+        .animate-lint-eject-2 {
+            animation: lintEject 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite 0.7s;
+        }
+        .animate-lint-eject-3 {
+            animation: lintEject 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite 1.4s;
+        }
+        @keyframes lintEject {
+            0% { transform: translateX(-80px) translateY(0) scale(1); opacity: 0.9; }
+            70% { opacity: 0.8; }
+            100% { transform: translateX(150px) translateY(-10px) scale(0.3); opacity: 0; }
+        }
+
+        /* 4. Thermal Safety Scanner Line */
+        .animate-thermal-scan {
+            animation: thermalScan 3.5s ease-in-out infinite alternate;
+        }
+        @keyframes thermalScan {
+            0% { transform: translateX(-130px); opacity: 0.2; }
+            50% { opacity: 0.9; }
+            100% { transform: translateX(130px); opacity: 0.2; }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-slate-700 bg-slate-50 overflow-x-hidden selection:bg-orange-500 selection:text-white">
+
+    <!-- Sticky Glassmorphism Header -->
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tight text-slate-900 flex items-center group cursor-pointer">
+                <i class="fa-solid fa-house-chimney-window mr-3 text-blue-600 group-hover:rotate-12 transition-transform duration-300"></i>
+                EliteHome<span class="text-blue-600 font-light">USA</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider text-slate-600">
+                <a href="index.html#services" class="hover:text-blue-600 transition-colors duration-200">All Services</a>
+                <a href="#lint-scrubbing" class="hover:text-blue-600 transition-colors duration-200">Rotary Scrubbing</a>
+                <a href="#vent-cap" class="hover:text-blue-600 transition-colors duration-200">Exterior Caps & Guards</a>
+                <a href="#fire-safety" class="hover:text-blue-600 transition-colors duration-200">Fire Prevention</a>
+            </nav>
+            <div class="bg-slate-100 border border-slate-300 hover:border-blue-600 text-slate-900 px-5 py-2 rounded-full font-bold transition-all duration-300 flex items-center shadow-sm">
+                <i class="fa-solid fa-phone mr-2 text-orange-500 animate-pulse"></i>
+                <a href="tel:+18005550199" id="dynamic-phone-number">Routing Local...</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden bg-white">
+        <!-- Orange/Warm Glow Accent -->
+        <div class="absolute top-1/4 right-10 w-96 h-96 bg-orange-100/70 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                
+                <!-- Left Content Column -->
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <div class="inline-flex items-center space-x-2 bg-orange-50 border border-orange-200 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest text-orange-700 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
+                        <span>Certified Dryer Fire Hazard Specialists</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
+                        Professional Dryer Vent <br><span class="text-orange-500">Lint Extraction & Safety</span>
+                    </h1>
+                    <p class="text-slate-600 mb-8 text-lg font-normal leading-relaxed">
+                        Prevent dangerous laundry fires, eliminate long drying cycles, and cut power costs. We scrub entire vent lines using rotary brush whips, high-pressure air snakes, and backdraft damper inspections.
+                    </p>
+                    
+                    <!-- Diagnostic Banner -->
+                    <div class="bg-slate-900 rounded-2xl p-6 text-white border border-slate-800 shadow-xl mb-8">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                            <span class="text-xs font-mono text-orange-400 uppercase tracking-wider flex items-center">
+                                <i class="fa-solid fa-fire-shield mr-2"></i> Thermal Safety Diagnostic Feed
+                            </span>
+                            <span class="text-xs font-mono bg-orange-500/20 text-orange-400 border border-orange-500/30 px-2 py-0.5 rounded">
+                                FIRE HAZARD LEVEL: LOW
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-center font-mono text-xs">
+                            <div>
+                                <p class="text-slate-400 mb-1">AIR VELOCITY</p>
+                                <p class="text-emerald-400 font-bold">1,850 FPM</p>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 mb-1">VENT IMPEDANCE</p>
+                                <p class="text-cyan-400 font-bold">0.05 IN WC</p>
+                            </div>
+                            <div>
+                                <p class="text-slate-400 mb-1">DRY TIME REDUCTION</p>
+                                <p class="text-orange-400 font-bold">-55 MIN/CYCLE</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#request-form" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-orange-500/30 text-center">
+                            Schedule Vent Cleaning
+                        </a>
+                        <a href="tel:+18005550199" class="bg-slate-100 border border-slate-300 hover:border-orange-500 text-slate-800 font-bold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center">
+                            <i class="fa-solid fa-phone text-orange-500 mr-2"></i> Emergency Dispatch
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Hero Dryer Vent Cross-Section Animation Showcase -->
+                <div class="lg:w-1/2 w-full max-w-lg" data-aos="fade-left">
+                    <div class="bg-slate-950 border-2 border-slate-800 rounded-3xl p-4 shadow-2xl relative overflow-hidden">
+                        
+                        <!-- Header Label on Frame -->
+                        <div class="flex justify-between items-center mb-3 px-2">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                <span class="text-xs font-mono text-slate-400 ml-2">EXHAUST_PIPE_SCAN_FEED</span>
+                            </div>
+                            <span class="text-[11px] font-mono text-orange-400 bg-orange-950/80 px-2 py-0.5 rounded border border-orange-800">
+                                AIR_SWEEP_ACTIVE
+                            </span>
+                        </div>
+
+                        <!-- Main Animated Vent Pipe Chamber -->
+                        <div class="w-full h-96 bg-slate-900 rounded-2xl relative overflow-hidden border border-slate-800 flex flex-col justify-between p-2 shadow-inner">
+                            
+                            <!-- Metallic Corrugated Flex Pipe Texture -->
+                            <div class="absolute inset-0 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950"></div>
+                            <div class="absolute inset-0 flex justify-between opacity-30 pointer-events-none px-2">
+                                <div class="w-2 h-full bg-slate-400 border-x border-slate-600"></div>
+                                <div class="w-2 h-full bg-slate-400 border-x border-slate-600"></div>
+                                <div class="w-2 h-full bg-slate-400 border-x border-slate-600"></div>
+                                <div class="w-2 h-full bg-slate-400 border-x border-slate-600"></div>
+                                <div class="w-2 h-full bg-slate-400 border-x border-slate-600"></div>
+                                <div class="w-2 h-full bg-slate-400 border-x border-slate-600"></div>
+                            </div>
+
+                            <!-- Corrugated Pipe Ring Edges (Top & Bottom) -->
+                            <div class="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-slate-600 to-slate-800 border-b border-slate-500 flex items-center justify-between px-4">
+                                <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+                            </div>
+                            <div class="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-slate-600 to-slate-800 border-t border-slate-500 flex items-center justify-between px-4">
+                                <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+                                <div class="w-1.5 h-1.5 rounded-full bg-slate-300"></div>
+                            </div>
+
+                            <!-- Hot Exhaust Air Flow Stream Lines -->
+                            <div class="absolute inset-y-8 inset-x-0 flex flex-col justify-around pointer-events-none z-10">
+                                <div class="w-28 h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent rounded-full animate-heat-flow-1"></div>
+                                <div class="w-36 h-1.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent rounded-full animate-heat-flow-2"></div>
+                                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-red-400 to-transparent rounded-full animate-heat-flow-3"></div>
+                            </div>
+
+                            <!-- Thermal Safety Laser Scan Line -->
+                            <div class="absolute inset-y-4 w-10 bg-orange-500/20 border-x border-orange-400/80 shadow-[0_0_25px_rgba(249,115,22,0.8)] animate-thermal-scan z-20 pointer-events-none flex flex-col justify-between py-2 items-center">
+                                <span class="text-[8px] font-mono text-orange-200 bg-slate-950/80 px-1 rounded">THERMAL_OK</span>
+                                <i class="fa-solid fa-temperature-arrow-down text-orange-300 text-xs animate-bounce"></i>
+                                <span class="text-[8px] font-mono text-orange-200 bg-slate-950/80 px-1 rounded">SAFE</span>
+                            </div>
+
+                            <!-- Ejecting Lint Clumps & Dust Particles -->
+                            <div class="absolute inset-0 flex items-center justify-start pointer-events-none z-10 px-8">
+                                <div class="w-4 h-3 bg-stone-400/80 rounded-full blur-[0.5px] animate-lint-eject-1"></div>
+                                <div class="w-5 h-4 bg-amber-200/50 rounded-full blur-[0.5px] animate-lint-eject-2 ml-10"></div>
+                                <div class="w-3 h-3 bg-stone-300/80 rounded-full blur-[0.5px] animate-lint-eject-3 ml-20"></div>
+                            </div>
+
+                            <!-- Traversing Flexible Cable & Rotary Lint Brush -->
+                            <div class="relative z-30 my-auto flex items-center justify-center h-full">
+                                <div class="flex items-center animate-vent-snake-hero">
+                                    <!-- Flexible Fiber Snake Cable -->
+                                    <div class="w-48 h-2.5 bg-gradient-to-r from-slate-700 via-stone-500 to-orange-500 rounded-l shadow-md"></div>
+                                    
+                                    <!-- Rotating Nylon Brush Whip -->
+                                    <div class="relative flex items-center justify-center">
+                                        <!-- Spinning Whip Aura -->
+                                        <div class="w-28 h-28 bg-orange-500/20 rounded-full absolute border border-orange-400/40 animate-ping"></div>
+                                        
+                                        <!-- Rotary Head -->
+                                        <div class="w-24 h-24 bg-gradient-to-r from-orange-500 to-amber-400 rounded-full border-2 border-amber-200 flex items-center justify-center shadow-[0_0_25px_rgba(249,115,22,0.8)] animate-lint-brush-spin">
+                                            <div class="w-full h-full relative flex items-center justify-center">
+                                                <i class="fa-solid fa-asterisk text-white text-3xl"></i>
+                                                <i class="fa-solid fa-wind text-orange-900 text-xl absolute"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Exterior Vent Outlet Hood (Right Side Exit) -->
+                                    <div class="w-16 h-28 bg-gradient-to-r from-transparent to-orange-950/70 border-r-2 border-orange-500/70 rounded-r-2xl ml-2 flex flex-col items-center justify-center space-y-2">
+                                        <i class="fa-solid fa-angles-right text-orange-400 text-lg animate-pulse"></i>
+                                        <span class="text-[9px] font-mono text-orange-300">EXHAUST</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Footer Details Bar -->
+                        <div class="mt-3 flex justify-between items-center text-xs font-mono text-slate-400 px-2">
+                            <span><i class="fa-solid fa-wind text-orange-400 mr-1"></i> Rotary Air Sweep</span>
+                            <span>CSIA / Fire Safety Standard</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Overview Section -->
+    <section id="lint-scrubbing" class="py-20 border-t border-slate-200 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Full-Length Dryer Exhaust Restoration</h2>
+                <p class="text-slate-600 mt-3">We clean from the back of the appliance through internal wall/ceiling duct runs to the exterior wall or roof exit flap.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-8 hover:border-orange-500 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-2xl mb-6">
+                        <i class="fa-solid fa-dharmachakra"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Rotary Whip & Air Reverse Sweep</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Spinning nylon whip heads break up impacted lint layers while high-pressure reverse air nozzles blast residue out of wall cavities.</p>
+                    <ul class="text-xs font-mono text-slate-700 space-y-2 border-t border-slate-100 pt-4">
+                        <li>> Flexible Fiber-Reinforced Rods</li>
+                        <li>> Full Length Scrubbing (Up to 50ft)</li>
+                        <li>> HEPA Containment at Lint Trap</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-8 hover:border-orange-500 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200" id="vent-cap">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-2xl mb-6">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Exterior Vent Cap & Pest Guards</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Inspection and unsticking of backdraft damper flaps, removal of bird nests, and installation of pest-proof exterior vent covers.</p>
+                    <ul class="text-xs font-mono text-slate-700 space-y-2 border-t border-slate-100 pt-4">
+                        <li>> Roof & Wall Terminal Cap Service</li>
+                        <li>> Heavy-Duty Bird & Rodent Guard</li>
+                        <li>> Damper Flap Seal Inspection</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-8 hover:border-orange-500 hover:shadow-xl transition-all duration-300" data-aos="fade-up" data-aos-delay="300" id="fire-safety">
+                    <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 text-2xl mb-6">
+                        <i class="fa-solid fa-fire-extinguisher"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Transition Duct & Fire Inspection</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Replacement of flammable foil/plastic flex hoses with fire-code compliant semi-rigid metal transition lines and airflow static pressure testing.</p>
+                    <ul class="text-xs font-mono text-slate-700 space-y-2 border-t border-slate-100 pt-4">
+                        <li>> UL-723 Fire-Rated Metallic Hoses</li>
+                        <li>> Anemometer Air Velocity Check</li>
+                        <li>> Appliance Rear Lint Trap Deep Clean</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Form Section -->
+    <section id="request-form" class="py-20 bg-white border-t border-slate-200">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 shadow-xl">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900">Request Dryer Vent Safety Inspection</h3>
+                    <p class="text-slate-600 text-sm mt-2">Fill out the form below to dispatch a certified lint extraction technician to your property.</p>
+                </div>
+
+                <form action="#" method="POST" class="space-y-6 text-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-slate-700 text-xs font-bold mb-2 uppercase tracking-wider">Full Name</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 text-slate-900 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition" placeholder="Jane Smith">
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 text-xs font-bold mb-2 uppercase tracking-wider">Phone Number</label>
+                            <input type="tel" class="w-full bg-white border border-slate-300 text-slate-900 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition" placeholder="(555) 000-0000">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-700 text-xs font-bold mb-2 uppercase tracking-wider">Service Needed</label>
+                        <select class="w-full bg-white border border-slate-300 text-slate-900 rounded-lg px-4 py-3 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition">
+                            <option>Standard Full Dryer Vent Cleaning</option>
+                            <option>Vent Cleaning + Metal Flex Transition Replacement</option>
+                            <option>Roof/Wall Exterior Cap & Bird Guard Installation</option>
+                            <option>Commercial Laundry Exhaust Line Service</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-orange-500/30">
+                        Dispatch Fire Safety & Vent Technician
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2026 EliteHomeUSA. Fire Hazard Prevention & Indoor Air Quality.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 50, duration: 800 });
+
+        function generateLocalPhoneNumber() {
+            setTimeout(() => {
+                const p = document.getElementById('dynamic-phone-number');
+                p.innerText = "(214) 555-0199";
+                p.parentElement.href = "tel:+12145550199";
+                p.previousElementSibling.classList.remove('animate-pulse');
+            }, 1000);
+        }
+        window.onload = generateLocalPhoneNumber;
+    </script>
+</body>
+</html>
