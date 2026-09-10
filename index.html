@@ -1,181 +1,94 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Home Services | Precision Maintenance</title>
+    <title>EliteHomeUSA | Premier Home Safety & Maintenance Services</title>
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library CDN -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    
     <style>
         /* =========================================================
-           1. AIR DUCT: Rotary Duct Cleaning Brush Simulation
+           CUSTOM MECHANICAL & AIRFLOW ANIMATIONS
            ========================================================= */
-        .animate-duct-brush {
-            animation: ductBrushSweep 4s ease-in-out infinite alternate;
+
+        /* Steady Continuous Rotations */
+        @keyframes spinSlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes spinFast {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(-360deg); }
+        }
+        .animate-spin-slow { animation: spinSlow 4s linear infinite; }
+        .animate-spin-fast { animation: spinFast 1.8s linear infinite; }
+
+        /* Smooth Airflow & Heatflow Streams */
+        @keyframes flowSmooth {
+            0% { transform: translateX(-100%); opacity: 0; }
+            50% { opacity: 0.95; }
+            100% { transform: translateX(220%); opacity: 0; }
+        }
+        .animate-air-flow-smooth,
+        .animate-heat-flow-smooth {
+            animation: flowSmooth 2.4s ease-in-out infinite;
         }
 
-        @keyframes ductBrushSweep {
-
-            0%,
-            10% {
-                transform: translateX(-38px) rotate(0deg);
-            }
-
-            90%,
-            100% {
-                transform: translateX(38px) rotate(1080deg);
-            }
+        /* Exterior Vent Flap Bounce */
+        @keyframes ventFlapBounce {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(30deg); }
+        }
+        .animate-vent-flap-bounce {
+            transform-origin: top left;
+            animation: ventFlapBounce 1.2s ease-in-out infinite;
         }
 
-        .animate-duct-air {
-            animation: ductAirPulse 2s ease-in-out infinite;
+        /* Garage Door Vertical Motion */
+        @keyframes garageRoll {
+            0%, 100% { transform: translateY(0%); }
+            50% { transform: translateY(-75%); }
+        }
+        .animate-garage-roll {
+            animation: garageRoll 4s ease-in-out infinite;
         }
 
-        @keyframes ductAirPulse {
-            0% {
-                transform: translateX(-20px);
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: translateX(20px);
-                opacity: 0;
-            }
+        /* Fireplace Flame Pulse */
+        @keyframes flameFlicker {
+            0%, 100% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
+            50% { transform: scale(1.15) rotate(2deg); opacity: 1; }
         }
-
-        /* =========================================================
-           2. CHIMNEY: Vertical Brick Flue Chimney Sweep Brush
-           ========================================================= */
-        .animate-chimney-sweep {
-            animation: chimneySweepScrub 4s ease-in-out infinite alternate;
-        }
-
-        @keyframes chimneySweepScrub {
-
-            0%,
-            10% {
-                transform: translateY(32px);
-            }
-
-            90%,
-            100% {
-                transform: translateY(-32px);
-            }
-        }
-
-        .animate-soot-particle {
-            animation: sootDrift 2s ease-out infinite;
-        }
-
-        @keyframes sootDrift {
-            0% {
-                transform: translateY(0) scale(1);
-                opacity: 0.8;
-            }
-
-            100% {
-                transform: translateY(-25px) scale(0.3);
-                opacity: 0;
-            }
-        }
-
-        /* =========================================================
-           3. DRYER VENT: Exterior Vent Louver Flap Opening
-           ========================================================= */
-        .animate-vent-flap {
-            animation: ventFlapBlast 3.5s ease-in-out infinite;
-        }
-
-        @keyframes ventFlapBlast {
-
-            0%,
-            15% {
-                transform: rotate(0deg);
-            }
-
-            40%,
-            80% {
-                transform: rotate(-55deg);
-            }
-
-            95%,
-            100% {
-                transform: rotate(0deg);
-            }
-        }
-
-        .animate-lint-exhaust {
-            animation: lintExhaustBlast 3.5s ease-in-out infinite;
-        }
-
-        @keyframes lintExhaustBlast {
-
-            0%,
-            20% {
-                transform: translateX(0) scale(0.5);
-                opacity: 0;
-            }
-
-            45% {
-                opacity: 1;
-            }
-
-            80%,
-            100% {
-                transform: translateX(35px) scale(1.2);
-                opacity: 0;
-            }
-        }
-
-        /* =========================================================
-           4. GARAGE DOOR: Rolling Slat Garage Door
-           ========================================================= */
-        .animate-mini-garage {
-            animation: miniGarageRoll 4.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes miniGarageRoll {
-
-            0%,
-            20% {
-                transform: translateY(0);
-            }
-
-            80%,
-            100% {
-                transform: translateY(-78%);
-            }
+        .animate-flame-flicker {
+            animation: flameFlicker 1.5s ease-in-out infinite;
         }
     </style>
 </head>
-
-<body
-    class="font-sans antialiased text-slate-700 bg-slate-50 overflow-x-hidden selection:bg-blue-500 selection:text-white">
+<body class="font-sans antialiased text-slate-700 bg-slate-50 overflow-x-hidden selection:bg-blue-600 selection:text-white">
 
     <!-- Sticky Glassmorphism Header -->
-    <header
-        class="bg-white/90 backdrop-blur-md border-b border-slate-200 fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-sm">
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html"
-                class="text-2xl font-bold tracking-tight text-slate-900 flex items-center group cursor-pointer">
-                <i
-                    class="fa-solid fa-house-chimney-window mr-3 text-blue-600 group-hover:rotate-12 transition-transform duration-300"></i>
+            <a href="index.html" class="text-2xl font-bold tracking-tight text-slate-900 flex items-center group cursor-pointer">
+                <i class="fa-solid fa-house-chimney-window mr-3 text-blue-600 group-hover:rotate-12 transition-transform duration-300"></i>
                 EliteHome<span class="text-blue-600 font-light">USA</span>
             </a>
+            
             <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider text-slate-600">
                 <a href="#services" class="hover:text-blue-600 transition-colors duration-200">Services</a>
-                <a href="#dispatch" class="hover:text-blue-600 transition-colors duration-200">Dispatch</a>
-                <a href="#coverage" class="hover:text-blue-600 transition-colors duration-200">Coverage</a>
+                <a href="#why-us" class="hover:text-blue-600 transition-colors duration-200">Why Choose Us</a>
+                <a href="#reviews" class="hover:text-blue-600 transition-colors duration-200">Reviews</a>
+                <a href="#contact" class="hover:text-blue-600 transition-colors duration-200">Dispatch Request</a>
             </nav>
-            <div
-                class="bg-slate-100 border border-slate-300 hover:border-blue-600 text-slate-900 px-5 py-2 rounded-full font-bold transition-all duration-300 flex items-center shadow-sm">
+
+            <div class="bg-slate-100 border border-slate-300 hover:border-blue-600 text-slate-900 px-5 py-2 rounded-full font-bold transition-all duration-300 flex items-center shadow-sm">
                 <i class="fa-solid fa-phone mr-2 text-blue-600 animate-pulse"></i>
                 <a href="tel:+18005550199" id="dynamic-phone-number">Routing Local...</a>
             </div>
@@ -183,327 +96,320 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden bg-white">
-        <!-- Light Ambient Glow -->
-        <div class="absolute top-1/4 left-10 w-96 h-96 bg-blue-100 blur-[120px] rounded-full pointer-events-none"></div>
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-white">
+        <div class="absolute top-1/4 right-10 w-96 h-96 bg-blue-100/60 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-80 h-80 bg-orange-100/50 blur-[100px] rounded-full pointer-events-none"></div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
-
-                <!-- Hero Content (Left) -->
-                <div class="lg:w-1/2" data-aos="fade-right">
-                    <div
-                        class="inline-flex items-center space-x-2 bg-blue-50 border border-blue-200 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest text-blue-700 mb-6">
-                        <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
-                        <span>Active Dispatch Nationwide</span>
-                    </div>
-                    <h1
-                        class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
-                        Precision Home <br><span class="text-blue-600">Maintenance & Repair</span>
-                    </h1>
-                    <p class="text-slate-600 mb-8 text-lg font-normal leading-relaxed">
-                        Expert care for Air Ducts, Chimneys, Dryer Vents, and Garage Doors. Fully equipped certified
-                        technicians ready for rapid local deployment.
-                    </p>
-
-                    <ul class="space-y-4 font-mono text-sm text-slate-700 border-l-2 border-blue-600 pl-4 mb-8">
-                        <li>> SAME-DAY DISPATCH AVAILABLE</li>
-                        <li>> CERTIFIED & INSURED TECHNICIANS</li>
-                        <li>> TRANSPARENT UPFRONT PRICING</li>
-                    </ul>
+            <div class="max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <div class="inline-flex items-center space-x-2 bg-blue-50 border border-blue-200 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest text-blue-700 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
+                    <span>24/7 Certified Field Technicians</span>
                 </div>
+                
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6 tracking-tight">
+                    Professional Home Repair, Safety & Ventilation Services
+                </h1>
+                
+                <p class="text-slate-600 mb-8 text-lg font-normal leading-relaxed">
+                    Protecting your home with expert garage door restoration, chimney sweeping, dryer vent lint extraction, and HVAC air duct hygiene. Fast response, transparent pricing, and guaranteed safety.
+                </p>
 
-                <!-- Form Container (Right) -->
-                <div class="lg:w-1/2 w-full max-w-md" data-aos="fade-left">
-                    <div class="bg-white border border-slate-200 rounded-2xl p-8 shadow-xl shadow-slate-200/60">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Request Service</h3>
-                        <p class="text-slate-500 text-sm mb-6">Select a service to route to your local dispatch center.
-                        </p>
-
-                        <form action="#" method="POST" class="space-y-5 text-sm">
-                            <div>
-                                <label class="block text-slate-700 text-xs font-bold mb-2 uppercase tracking-wider">Full
-                                    Name</label>
-                                <input type="text"
-                                    class="w-full bg-slate-50 border border-slate-300 text-slate-900 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-600 focus:bg-white focus:ring-1 focus:ring-blue-600 placeholder-slate-400 transition"
-                                    placeholder="John Doe">
-                            </div>
-                            <div>
-                                <label
-                                    class="block text-slate-700 text-xs font-bold mb-2 uppercase tracking-wider">Phone
-                                    Number</label>
-                                <input type="tel"
-                                    class="w-full bg-slate-50 border border-slate-300 text-slate-900 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-600 focus:bg-white focus:ring-1 focus:ring-blue-600 placeholder-slate-400 transition"
-                                    placeholder="(555) 000-0000">
-                            </div>
-                            <div>
-                                <label
-                                    class="block text-slate-700 text-xs font-bold mb-2 uppercase tracking-wider">Required
-                                    Service</label>
-                                <select
-                                    class="w-full bg-slate-50 border border-slate-300 text-slate-900 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-600 focus:bg-white focus:ring-1 focus:ring-blue-600 transition appearance-none">
-                                    <option>Garage Door Repair & Install</option>
-                                    <option>Chimney Sweep & Inspection</option>
-                                    <option>Air Duct Sanitization</option>
-                                    <option>Dryer Vent Cleaning</option>
-                                </select>
-                            </div>
-                            <button type="submit"
-                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg transition-all shadow-lg shadow-blue-600/30">
-                                Deploy Technician
-                            </button>
-                        </form>
-                    </div>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-blue-600/30 text-center">
+                        Explore Services
+                    </a>
+                    <a href="tel:+18005550199" class="bg-slate-100 border border-slate-300 hover:border-blue-600 text-slate-800 font-bold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center">
+                        <i class="fa-solid fa-phone text-blue-600 mr-2"></i> Instant Dispatch
+                    </a>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Services Section with Contextual Mini-Simulations -->
-    <section id="services" class="py-20 border-t border-slate-200 bg-slate-50 relative">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Technical Solutions</h2>
-                <div class="w-16 h-1 bg-blue-600 mt-4 rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-                <!-- Air Duct Cleaning Service Card in index.html -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-8 hover:border-blue-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
-                    data-aos="fade-up">
-                    <div>
-                        <!-- Icon & Status Badge -->
-                        <div class="flex justify-between items-start mb-6">
-                            <div
-                                class="w-14 h-14 bg-blue-50 border border-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                                <i class="fa-solid fa-fan group-hover:rotate-180 transition-transform duration-700"></i>
-                            </div>
-                            <span
-                                class="text-[10px] font-mono font-bold bg-blue-50 text-blue-700 border border-blue-200 px-2.5 py-1 rounded-full uppercase tracking-wider">
-                                NADCA Certified
-                            </span>
-                        </div>
-
-                        <!-- Card Heading & Description -->
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
-                            Air Duct Cleaning & Sanitization
-                        </h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Eliminate dust, mold spores, and pet allergens using negative-pressure HEPA vacuums,
-                            motorized rotary brush scrubbers, and EPA antimicrobial fogging.
-                        </p>
-
-                        <!-- Feature List -->
-                        <ul class="text-xs font-mono text-slate-600 space-y-2 border-t border-slate-100 pt-4 mb-6">
-                            <li class="flex items-center">
-                                <i class="fa-solid fa-check text-blue-600 mr-2"></i> High-CFM HEPA Vacuum Extraction
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fa-solid fa-check text-blue-600 mr-2"></i> Rotary Whip & Coil Deep Cleaning
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fa-solid fa-check text-blue-600 mr-2"></i> Botanical Antimicrobial Sanitizing
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Direct Button Link to air-duct.html -->
-                    <a href="air-duct.html"
-                        class="w-full bg-slate-100 hover:bg-blue-600 text-slate-800 hover:text-white font-bold py-3 px-5 rounded-xl transition-all duration-300 text-center flex items-center justify-center text-sm shadow-sm">
-                        <span>Explore Air Duct Services</span>
-                        <i
-                            class="fa-solid fa-arrow-right ml-2 text-xs group-hover:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- 2. CHIMNEY CARD (Brick Flue Stack & Chimney Sweep Scrub) -->
-                <a href="chimney.html" data-aos="fade-up" data-aos-delay="200"
-                    class="block bg-white border border-slate-200 rounded-2xl p-6 hover:border-orange-500 hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col justify-between">
-                    <div>
-                        <!-- Chimney Brick Flue Preview -->
-                        <div
-                            class="relative w-full h-32 bg-amber-950 rounded-xl overflow-hidden mb-6 p-2 shadow-inner border border-slate-300">
-                            <!-- Brick Masonry Wall Texture -->
-                            <div
-                                class="w-full h-full bg-amber-900 rounded-lg relative flex justify-center items-center overflow-hidden border border-amber-800">
-                                <!-- Brick Lines Pattern -->
-                                <div
-                                    class="absolute inset-0 opacity-25 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:8px_8px]">
-                                </div>
-
-                                <!-- Central Chimney Flue Channel -->
-                                <div
-                                    class="w-20 h-full bg-slate-950 border-x-2 border-amber-900/80 relative flex items-center justify-center">
-                                    <!-- Soot Particles Rising -->
-                                    <div class="absolute bottom-2 flex space-x-1">
-                                        <div class="w-1.5 h-1.5 bg-orange-500 rounded-full animate-soot-particle"></div>
-                                        <div class="w-2 h-2 bg-slate-400 rounded-full animate-soot-particle"
-                                            style="animation-delay: 0.8s;"></div>
-                                    </div>
-
-                                    <!-- Wire Chimney Sweep Brush (Moves Up and Down) -->
-                                    <div class="absolute z-10 flex flex-col items-center animate-chimney-sweep">
-                                        <!-- Flexible Rod -->
-                                        <div class="w-1 h-16 bg-slate-400"></div>
-                                        <!-- Wire Scrub Head -->
-                                        <div
-                                            class="w-16 h-6 bg-orange-600 rounded-sm border border-amber-300 flex items-center justify-center shadow-[0_0_12px_rgba(234,88,12,0.7)]">
-                                            <i class="fa-solid fa-grip-lines-vertical text-amber-200 text-xs"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Chimney</h3>
-                        <p class="text-slate-600 text-sm mb-6">Level 2 safety inspections, deep creosote sweeps, and
-                            masonry repair.</p>
-                    </div>
-                    <span
-                        class="text-orange-600 text-sm font-bold flex items-center group-hover:translate-x-1 transition-transform">Service
-                        Page <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></span>
-                </a>
-
-                <!-- Dryer Vent Cleaning Service Card -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-8 hover:border-orange-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
-                    data-aos="fade-up">
-                    <div>
-                        <!-- Icon & Status Badge -->
-                        <div class="flex justify-between items-start mb-6">
-                            <div
-                                class="w-14 h-14 bg-orange-50 border border-orange-100 rounded-2xl flex items-center justify-center text-orange-500 text-2xl group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-sm">
-                                <i
-                                    class="fa-solid fa-fire-shield group-hover:scale-110 transition-transform duration-300"></i>
-                            </div>
-                            <span
-                                class="text-[10px] font-mono font-bold bg-orange-50 text-orange-700 border border-orange-200 px-2.5 py-1 rounded-full uppercase tracking-wider">
-                                Fire Prevention
-                            </span>
-                        </div>
-
-                        <!-- Card Heading & Description -->
-                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-500 transition-colors">
-                            Dryer Vent Cleaning & Lint Removal
-                        </h3>
-                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            Prevent dangerous laundry fires, eliminate multi-cycle drying times, and cut energy usage
-                            with deep rotary whip brush scrubbed vent lines and cap clearing.
-                        </p>
-
-                        <!-- Feature List -->
-                        <ul class="text-xs font-mono text-slate-600 space-y-2 border-t border-slate-100 pt-4 mb-6">
-                            <li class="flex items-center">
-                                <i class="fa-solid fa-check text-orange-500 mr-2"></i> Rotary Whip & Air Reverse Sweep
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fa-solid fa-check text-orange-500 mr-2"></i> Roof & Wall Exterior Cap Cleaning
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fa-solid fa-check text-orange-500 mr-2"></i> UL-723 Transition Hose Inspection
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Learn More Link -->
-                    <a href="dryer-vent.html"
-                        class="w-full bg-slate-100 hover:bg-orange-500 text-slate-800 hover:text-white font-bold py-3 px-5 rounded-xl transition-all duration-300 text-center flex items-center justify-center text-sm shadow-sm group/btn">
-                        <span>Learn More</span>
-                        <i
-                            class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
-                    </a>
-                </div>
-
-                <!-- 4. GARAGE DOOR CARD (Mini Rolling Garage Door) -->
-                <a href="garage-door.html" data-aos="fade-up" data-aos-delay="400"
-                    class="block bg-white border border-slate-200 rounded-2xl p-6 hover:border-blue-500 hover:shadow-xl transition-all duration-300 group cursor-pointer flex flex-col justify-between">
-                    <div>
-                        <!-- Garage Door Interactive Preview -->
-                        <div
-                            class="relative w-full h-32 bg-slate-100 border border-slate-200 rounded-xl overflow-hidden mb-6 p-1.5 shadow-inner">
-                            <!-- Background Garage Interior with Dispatch Vehicle -->
-                            <div
-                                class="absolute inset-1.5 bg-gradient-to-t from-blue-100 via-slate-50 to-slate-100 rounded-lg flex flex-col items-center justify-center">
-                                <i class="fa-solid fa-truck-fast text-3xl text-blue-600 drop-shadow-sm"></i>
-                                <span class="text-[10px] uppercase font-mono font-bold text-blue-600 mt-1">Truck En
-                                    Route</span>
-                            </div>
-                            <!-- Rolling Slat Door Panels (Rolls Up and Down) -->
-                            <div
-                                class="absolute inset-x-1.5 top-1.5 bottom-1.5 z-10 flex flex-col animate-mini-garage shadow-md rounded-t-md overflow-hidden bg-slate-200 border border-slate-300">
-                                <div
-                                    class="h-1/4 bg-slate-300 border-b border-slate-400 flex items-center justify-around px-3">
-                                    <div class="w-5 h-2 bg-white border border-slate-400 rounded-xs"></div>
-                                    <div class="w-5 h-2 bg-white border border-slate-400 rounded-xs"></div>
-                                </div>
-                                <div class="h-1/4 bg-slate-200 border-b border-slate-300"></div>
-                                <div class="h-1/4 bg-slate-300 border-b border-slate-300"></div>
-                                <div class="h-1/4 bg-slate-200 border-b-2 border-slate-400"></div>
-                            </div>
-                        </div>
-
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Garage Door</h3>
-                        <p class="text-slate-600 text-sm mb-6">Torsion spring replacement, track alignment, and motor
-                            installations.</p>
-                    </div>
-                    <span
-                        class="text-blue-600 text-sm font-bold flex items-center group-hover:translate-x-1 transition-transform">Service
-                        Page <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></span>
-                </a>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Dispatch Info Section -->
-    <section id="dispatch" class="py-20 border-t border-slate-200 bg-white">
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-slate-50 border-t border-slate-200">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="bg-slate-50 border border-slate-200 p-8 rounded-xl">
-                    <i class="fa-solid fa-clock-rotate-left text-3xl text-blue-600 mb-4"></i>
-                    <h4 class="text-slate-900 font-bold text-lg mb-2">24/7 Rapid Dispatch</h4>
-                    <p class="text-slate-600 text-sm">Automated call routing guarantees immediate contact with on-call
-                        technicians.</p>
+            
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Specialized Home Services</h2>
+                <p class="text-slate-600 mt-3">Select a service below to view detailed specifications, real-time safety diagnostics, and instant scheduling options.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- 1. Garage Door Service Card -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-blue-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <!-- Animated Visual Preview -->
+                        <div class="w-full h-36 bg-slate-950 rounded-xl mb-6 relative overflow-hidden border border-slate-800 flex items-end justify-center p-2 shadow-inner">
+                            <div class="absolute top-2 left-2 text-[10px] font-mono text-blue-400"><i class="fa-solid fa-warehouse mr-1"></i>SYSTEM_CHECK</div>
+                            <div class="w-full bg-slate-800 border-t-2 border-blue-500 rounded-t-lg transition-all animate-garage-roll flex flex-col justify-between p-1.5" style="height: 80%;">
+                                <div class="w-full h-1 bg-slate-700 rounded"></div>
+                                <div class="w-full h-1 bg-slate-700 rounded"></div>
+                                <div class="w-full h-1 bg-slate-700 rounded"></div>
+                                <div class="w-full h-1 bg-slate-700 rounded"></div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
+                            Garage Door Services
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Spring replacements, track alignment, high-torque motor repair, and custom door panel installations.
+                        </p>
+
+                        <ul class="text-xs font-mono text-slate-600 space-y-1.5 border-t border-slate-100 pt-3 mb-6">
+                            <li><i class="fa-solid fa-check text-blue-600 mr-1.5"></i> Torsion & Extension Springs</li>
+                            <li><i class="fa-solid fa-check text-blue-600 mr-1.5"></i> Smart Opener Integration</li>
+                            <li><i class="fa-solid fa-check text-blue-600 mr-1.5"></i> Emergency Off-Track Repair</li>
+                        </ul>
+                    </div>
+
+                    <a href="garage-door.html" class="w-full bg-slate-100 hover:bg-blue-600 text-slate-800 hover:text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 text-center flex items-center justify-center text-xs group/btn shadow-sm">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
                 </div>
-                <div class="bg-slate-50 border border-slate-200 p-8 rounded-xl">
-                    <i class="fa-solid fa-shield-halved text-3xl text-blue-600 mb-4"></i>
-                    <h4 class="text-slate-900 font-bold text-lg mb-2">Vetted Specialists</h4>
-                    <p class="text-slate-600 text-sm">All personnel are fully licensed, background-checked, and insured.
-                    </p>
+
+                <!-- 2. Chimney Sweep Service Card -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-amber-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <!-- Animated Visual Preview -->
+                        <div class="w-full h-36 bg-slate-950 rounded-xl mb-6 relative overflow-hidden border border-slate-800 flex items-center justify-center p-2 shadow-inner">
+                            <div class="absolute top-2 left-2 text-[10px] font-mono text-amber-400"><i class="fa-solid fa-fire mr-1"></i>CREOSOTE_INSPECT</div>
+                            <div class="relative flex flex-col items-center">
+                                <i class="fa-solid fa-fire-flame-curved text-amber-500 text-4xl animate-flame-flicker"></i>
+                                <div class="w-16 h-2 bg-slate-800 rounded-full mt-2 border border-slate-700"></div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-amber-500 transition-colors">
+                            Chimney & Fireplace
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Creosote removal, flue lining inspections, masonry repair, and draft performance testing.
+                        </p>
+
+                        <ul class="text-xs font-mono text-slate-600 space-y-1.5 border-t border-slate-100 pt-3 mb-6">
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Level 1 & Level 2 Inspections</li>
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Flue Glaze Creosote Scrubbing</li>
+                            <li><i class="fa-solid fa-check text-amber-500 mr-1.5"></i> Crown & Cap Waterproofing</li>
+                        </ul>
+                    </div>
+
+                    <a href="chimney.html" class="w-full bg-slate-100 hover:bg-amber-500 text-slate-800 hover:text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 text-center flex items-center justify-center text-xs group/btn shadow-sm">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
                 </div>
-                <div class="bg-slate-50 border border-slate-200 p-8 rounded-xl" id="coverage">
-                    <i class="fa-solid fa-location-dot text-3xl text-blue-600 mb-4"></i>
-                    <h4 class="text-slate-900 font-bold text-lg mb-2">Local Service Hubs</h4>
-                    <p class="text-slate-600 text-sm">Direct local coverage ensuring minimal waiting time for emergency
-                        repairs.</p>
+
+                <!-- 3. Dryer Vent Cleaning Service Card -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-orange-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <!-- Animated Visual Preview -->
+                        <div class="w-full h-36 bg-slate-950 rounded-xl mb-6 relative overflow-hidden border border-slate-800 flex items-center justify-center p-2 shadow-inner">
+                            <div class="absolute top-2 left-2 text-[10px] font-mono text-orange-400"><i class="fa-solid fa-wind mr-1"></i>LINT_EXHAUST</div>
+                            
+                            <!-- Hot Stream Animation -->
+                            <div class="absolute inset-0 flex flex-col justify-around py-4 pointer-events-none">
+                                <div class="w-16 h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent rounded-full animate-heat-flow-smooth"></div>
+                                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent rounded-full animate-heat-flow-smooth" style="animation-delay: 0.6s;"></div>
+                            </div>
+
+                            <div class="relative z-10 flex items-center justify-between w-full max-w-[140px]">
+                                <div class="w-12 h-1.5 bg-orange-600 rounded-l"></div>
+                                <div class="w-10 h-10 rounded-full border-2 border-dashed border-orange-400 animate-spin-slow flex items-center justify-center bg-orange-500/20">
+                                    <i class="fa-solid fa-asterisk text-orange-300 text-xs"></i>
+                                </div>
+                                <div class="relative w-8 h-12 bg-slate-800 border border-orange-500 rounded-r flex items-center justify-center">
+                                    <div class="absolute -right-1 top-1 bottom-1 w-1.5 bg-orange-400 rounded-r animate-vent-flap-bounce"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-500 transition-colors">
+                            Dryer Vent Cleaning
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            Deep rotary brush extraction, fire hazard prevention, and exterior vent cap clearing.
+                        </p>
+
+                        <ul class="text-xs font-mono text-slate-600 space-y-1.5 border-t border-slate-100 pt-3 mb-6">
+                            <li><i class="fa-solid fa-check text-orange-500 mr-1.5"></i> Full-Length Rotary Scrubbing</li>
+                            <li><i class="fa-solid fa-check text-orange-500 mr-1.5"></i> Exterior Cap & Pest Screen</li>
+                            <li><i class="fa-solid fa-check text-orange-500 mr-1.5"></i> UL-723 Transition Hose Check</li>
+                        </ul>
+                    </div>
+
+                    <a href="dryer-vent.html" class="w-full bg-slate-100 hover:bg-orange-500 text-slate-800 hover:text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 text-center flex items-center justify-center text-xs group/btn shadow-sm">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
                 </div>
+
+                <!-- 4. Air Duct Cleaning Service Card -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-cyan-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="400">
+                    <div>
+                        <!-- Animated Visual Preview -->
+                        <div class="w-full h-36 bg-slate-950 rounded-xl mb-6 relative overflow-hidden border border-slate-800 flex items-center justify-center p-2 shadow-inner">
+                            <div class="absolute top-2 left-2 text-[10px] font-mono text-cyan-400"><i class="fa-solid fa-fan mr-1"></i>AIR_HYGIENE</div>
+                            
+                            <!-- Air Stream Animation -->
+                            <div class="absolute inset-0 flex flex-col justify-around py-4 pointer-events-none">
+                                <div class="w-16 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent rounded-full animate-air-flow-smooth"></div>
+                                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent rounded-full animate-air-flow-smooth" style="animation-delay: 0.7s;"></div>
+                            </div>
+
+                            <div class="relative z-10 flex items-center justify-between w-full max-w-[140px]">
+                                <div class="w-12 h-1.5 bg-slate-600 rounded-l"></div>
+                                <div class="w-10 h-10 rounded-full border-2 border-dashed border-cyan-400 animate-spin-slow flex items-center justify-center bg-blue-600/20">
+                                    <i class="fa-solid fa-asterisk text-cyan-300 text-xs"></i>
+                                </div>
+                                <div class="w-8 h-12 bg-blue-950 border border-blue-500 rounded-r flex items-center justify-center">
+                                    <i class="fa-solid fa-angles-right text-cyan-400 text-xs animate-pulse"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-cyan-500 transition-colors">
+                            Air Duct & HVAC
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                            HEPA negative-air pressure vacuuming, dust removal, and coil sanitizer treatment.
+                        </p>
+
+                        <ul class="text-xs font-mono text-slate-600 space-y-1.5 border-t border-slate-100 pt-3 mb-6">
+                            <li><i class="fa-solid fa-check text-cyan-500 mr-1.5"></i> Negative Pressure HEPA Vacuum</li>
+                            <li><i class="fa-solid fa-check text-cyan-500 mr-1.5"></i> Mold & Allergen Removal</li>
+                            <li><i class="fa-solid fa-check text-cyan-500 mr-1.5"></i> Blower & Coil Deep Wash</li>
+                        </ul>
+                    </div>
+
+                    <a href="air-duct.html" class="w-full bg-slate-100 hover:bg-cyan-500 text-slate-800 hover:text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 text-center flex items-center justify-center text-xs group/btn shadow-sm">
+                        <span>Learn More</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="py-20 bg-white border-t border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Why EliteHomeUSA?</h2>
+                <p class="text-slate-600 mt-3">Dedicated to safety, precision workmanship, and complete customer satisfaction.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto text-2xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Licensed & Insured</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Fully certified technicians covered by comprehensive liability insurance.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto text-2xl mb-4">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Same-Day Service</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">24/7 rapid emergency dispatch available for urgent household safety issues.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto text-2xl mb-4">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">Upfront Estimates</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Clear diagnostic reports and zero hidden fees before any work begins.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto text-2xl mb-4">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-lg mb-2">CSIA & NADCA</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed">Adhering strictly to national fire safety and indoor air quality standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Form Section -->
+    <section id="contact" class="py-20 bg-slate-900 text-white">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-white">Schedule Immediate Service</h3>
+                    <p class="text-slate-400 text-sm mt-2">Submit your request below for prompt dispatch routing.</p>
+                </div>
+
+                <form action="#" method="POST" class="space-y-6 text-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">Full Name</label>
+                            <input type="text" class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">Phone Number</label>
+                            <input type="tel" class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition" placeholder="(555) 000-0000">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">Service Needed</label>
+                        <select class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
+                            <option>Garage Door Repair / Installation</option>
+                            <option>Chimney Sweep & Inspection</option>
+                            <option>Dryer Vent Cleaning</option>
+                            <option>Air Duct & HVAC Cleaning</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">Additional Notes</label>
+                        <textarea rows="3" class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition" placeholder="Describe any specific issues..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-600/30">
+                        Dispatch Local Technician
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-10">
+    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800">
         <div class="container mx-auto px-6 text-center text-sm">
-            <p>&copy; 2026 EliteHomeUSA. Precision Maintenance.</p>
+            <p>&copy; 2026 EliteHomeUSA. Fire Hazard Prevention & Household Systems Care.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- AOS JS CDN -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize AOS Scroll Animations
         AOS.init({ once: true, offset: 50, duration: 800 });
 
+        // Dynamic Phone Routing Simulation
         function generateLocalPhoneNumber() {
             setTimeout(() => {
                 const p = document.getElementById('dynamic-phone-number');
-                p.innerText = "(214) 555-0199";
-                p.parentElement.href = "tel:+12145550199";
-                p.previousElementSibling.classList.remove('animate-pulse');
+                if (p) {
+                    p.innerText = "(214) 555-0199";
+                    p.parentElement.href = "tel:+12145550199";
+                    p.previousElementSibling.classList.remove('animate-pulse');
+                }
             }, 1000);
         }
         window.onload = generateLocalPhoneNumber;
     </script>
 </body>
-
 </html>
