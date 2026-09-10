@@ -27,16 +27,16 @@
             }
 
             50% {
-                transform: translateY(-72%);
+                transform: translateY(-75%);
             }
         }
 
         .animate-garage-slide {
-            animation: garageSlide 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            animation: garageSlide 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
         }
 
         /* =========================================================
-           2. REALISTIC BRICK CHIMNEY & FLUE SOOT CYCLE
+           2. REALISTIC CHIMNEY FLUE & SOOT CYCLE
            ========================================================= */
         @keyframes sootCycle {
 
@@ -45,19 +45,15 @@
                 opacity: 0;
             }
 
-            /* Clean Flue Tile */
             40%,
             65% {
                 opacity: 0.95;
             }
 
-            /* Heavy Creosote / Soot Build-up */
             85%,
             100% {
                 opacity: 0;
             }
-
-            /* Cleaned / Restored */
         }
 
         .animate-soot-cycle {
@@ -113,7 +109,7 @@
         }
 
         /* =========================================================
-           3. DRYER VENT: REALISTIC AIR PRESSURE & LINT CLOG
+           3. DRYER VENT ANIMATIONS
            ========================================================= */
         @keyframes windRush {
             0% {
@@ -121,10 +117,7 @@
                 opacity: 0;
             }
 
-            30% {
-                opacity: 0.9;
-            }
-
+            30%,
             70% {
                 opacity: 0.9;
             }
@@ -150,19 +143,15 @@
                 transform: rotate(-42deg);
             }
 
-            /* Clean -> High airflow pushes flap wide open */
             40%,
             65% {
                 transform: rotate(0deg);
             }
 
-            /* Clogged -> Zero airflow, flap drops shut */
             80%,
             100% {
                 transform: rotate(-42deg);
             }
-
-            /* Cleaned -> Airflow blasts open again */
         }
 
         .animate-louver-flap {
@@ -218,7 +207,7 @@
         }
 
         /* =========================================================
-           4. AIR DUCT: REALISTIC REGISTER VENT & AIR STREAMERS
+           4. AIR DUCT VENT ANIMATIONS
            ========================================================= */
         @keyframes ribbonFlutterCycle {
 
@@ -228,7 +217,6 @@
                 opacity: 1;
             }
 
-            /* Clean -> Blowing horizontal */
             22% {
                 transform: rotate(-72deg) skewY(-4deg);
                 opacity: 1;
@@ -246,14 +234,12 @@
                 opacity: 0.4;
             }
 
-            /* Clogged -> Hanging limp */
             80%,
             95% {
                 transform: rotate(-76deg) skewY(-3deg);
                 opacity: 1;
             }
 
-            /* Cleaned -> Fluttering back up */
             100% {
                 transform: rotate(-78deg) skewY(4deg);
                 opacity: 1;
@@ -325,7 +311,7 @@
 <body
     class="font-sans antialiased text-slate-700 bg-slate-50 overflow-x-hidden selection:bg-blue-600 selection:text-white">
 
-    <!-- Sticky Header -->
+    <!-- Header -->
     <header
         class="bg-white/90 backdrop-blur-md border-b border-slate-200 fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -402,26 +388,188 @@
             <!-- Services Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                <!-- 1. Garage Door Animation Card -->
+                <!-- 1. Garage Door Card (REALISTIC EVERYDAY SEDAN CAR) -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-blue-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
                     data-aos="fade-up" data-aos-delay="100">
                     <div>
                         <div
-                            class="w-full h-36 bg-slate-100 border border-slate-200 rounded-xl mb-6 relative overflow-hidden flex flex-col justify-end p-2 shadow-inner">
+                            class="w-full h-36 bg-slate-200/80 border border-slate-300 rounded-xl mb-6 relative overflow-hidden flex flex-col justify-end p-2 shadow-inner">
                             <div
-                                class="absolute top-2 left-2 text-[10px] font-mono text-slate-600 font-semibold bg-white/90 px-2 py-0.5 rounded border border-slate-200 shadow-sm z-20">
+                                class="absolute top-2 left-2 text-[10px] font-mono text-slate-600 font-semibold bg-white/90 px-2 py-0.5 rounded border border-slate-200 shadow-sm z-30">
+                                <i class="fa-solid fa-warehouse text-blue-600 mr-1"></i>GARAGE_TRACK
                             </div>
 
-                            <!-- Garage Door Frame Side Tracks -->
+                            <!-- Garage Interior Backdrop & Driveway Pavement -->
                             <div
-                                class="absolute left-3 top-0 bottom-0 w-1.5 bg-slate-300 border-x border-slate-400 z-0">
+                                class="absolute inset-0 bg-gradient-to-b from-slate-400 via-slate-300 to-slate-500 z-0">
                             </div>
                             <div
-                                class="absolute right-3 top-0 bottom-0 w-1.5 bg-slate-300 border-x border-slate-400 z-0">
+                                class="absolute bottom-0 left-0 right-0 h-4 bg-stone-700 border-t-2 border-stone-800 z-0">
                             </div>
 
-                            <!-- Sliding Segmented Door -->
-                            <div class="w-full bg-white border-2 border-slate-300 rounded-t-lg transition-all animate-garage-slide flex flex-col justify-between p-1.5 shadow-md relative z-10"
+                            <!-- Garage Track Frames -->
+                            <div
+                                class="absolute left-3 top-0 bottom-0 w-1.5 bg-slate-400 border-x border-slate-500 z-10">
+                            </div>
+                            <div
+                                class="absolute right-3 top-0 bottom-0 w-1.5 bg-slate-400 border-x border-slate-500 z-10">
+                            </div>
+
+                            <!-- REALISTIC EXECUTIVE SEDAN VECTOR SVG -->
+                            <div
+                                class="absolute bottom-1 left-1/2 -translate-x-1/2 w-44 h-24 z-10 flex items-end justify-center">
+                                <svg viewBox="0 0 240 120" class="w-full h-full overflow-visible">
+                                    <defs>
+                                        <!-- Metallic Body Paint Gradient (Crimson Red) -->
+                                        <linearGradient id="carRedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#881337" />
+                                            <stop offset="22%" stop-color="#9f1239" />
+                                            <stop offset="42%" stop-color="#e11d48" />
+                                            <stop offset="50%" stop-color="#f43f5e" />
+                                            <stop offset="58%" stop-color="#e11d48" />
+                                            <stop offset="78%" stop-color="#9f1239" />
+                                            <stop offset="100%" stop-color="#881337" />
+                                        </linearGradient>
+
+                                        <!-- Windshield Glass Gradient -->
+                                        <linearGradient id="windshieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.65" />
+                                            <stop offset="40%" stop-color="#1e293b" stop-opacity="0.85" />
+                                            <stop offset="100%" stop-color="#020617" stop-opacity="0.95" />
+                                        </linearGradient>
+
+                                        <!-- Glass Reflection Glare -->
+                                        <linearGradient id="glassGlare" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.0" />
+                                            <stop offset="40%" stop-color="#ffffff" stop-opacity="0.25" />
+                                            <stop offset="60%" stop-color="#ffffff" stop-opacity="0.0" />
+                                        </linearGradient>
+
+                                        <!-- Chrome Trim Gradient -->
+                                        <linearGradient id="chromeAccent" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#ffffff" />
+                                            <stop offset="50%" stop-color="#cbd5e1" />
+                                            <stop offset="100%" stop-color="#64748b" />
+                                        </linearGradient>
+
+                                        <!-- Honeycomb Grille Pattern -->
+                                        <pattern id="grillePattern" width="6" height="6" patternUnits="userSpaceOnUse">
+                                            <path d="M 3,0 L 6,1.7 L 6,5 L 3,6.7 L 0,5 L 0,1.7 Z" fill="none"
+                                                stroke="#334155" stroke-width="0.5" />
+                                        </pattern>
+                                    </defs>
+
+                                    <!-- 1. Soft Ground Shadow -->
+                                    <ellipse cx="120" cy="107" rx="88" ry="5" fill="#000000" opacity="0.55"
+                                        filter="blur(2px)" />
+
+                                    <!-- 2. Tires (Proper Alignment) -->
+                                    <rect x="33" y="78" width="20" height="28" rx="4" fill="#0f172a" />
+                                    <rect x="35" y="80" width="16" height="24" rx="2" fill="#1e293b" />
+
+                                    <rect x="187" y="78" width="20" height="28" rx="4" fill="#0f172a" />
+                                    <rect x="189" y="80" width="16" height="24" rx="2" fill="#1e293b" />
+
+                                    <!-- 3. Aero Side Mirrors (Attached to Door Pillars) -->
+                                    <!-- Left Mirror -->
+                                    <path d="M 52,58 L 36,54 C 32,53 31,58 34,61 L 50,63 Z" fill="url(#carRedGrad)" />
+                                    <path d="M 36,55 L 48,58 L 47,61 L 35,59 Z" fill="#020617" opacity="0.7" />
+
+                                    <!-- Right Mirror -->
+                                    <path d="M 188,58 L 204,54 C 208,53 209,58 206,61 L 190,63 Z"
+                                        fill="url(#carRedGrad)" />
+                                    <path d="M 204,55 L 192,58 L 193,61 L 205,59 Z" fill="#020617" opacity="0.7" />
+
+                                    <!-- 4. Roof Canopy & Pillars -->
+                                    <path
+                                        d="M 82,30 Q 120,26 158,30 C 170,30 182,54 186,60 L 54,60 C 58,54 70,30 82,30 Z"
+                                        fill="#0f172a" />
+
+                                    <!-- 5. Windshield Glass -->
+                                    <path
+                                        d="M 85,32 Q 120,29 155,32 C 165,32 176,53 179,58 L 61,58 C 64,53 75,32 85,32 Z"
+                                        fill="url(#windshieldGrad)" stroke="#334155" stroke-width="0.5" />
+                                    <path
+                                        d="M 85,32 Q 120,29 155,32 C 165,32 176,53 179,58 L 61,58 C 64,53 75,32 85,32 Z"
+                                        fill="url(#glassGlare)" />
+
+                                    <!-- Interior Mirrors & Seats -->
+                                    <rect x="117" y="32" width="6" height="3" rx="1" fill="#64748b" />
+                                    <path d="M 92,48 Q 96,40 100,48 Z" fill="#1e293b" />
+                                    <path d="M 140,48 Q 144,40 148,48 Z" fill="#1e293b" />
+
+                                    <!-- Wipers -->
+                                    <line x1="88" y1="56" x2="118" y2="54" stroke="#0f172a" stroke-width="1"
+                                        stroke-linecap="round" />
+                                    <line x1="126" y1="56" x2="160" y2="54" stroke="#0f172a" stroke-width="1"
+                                        stroke-linecap="round" />
+
+                                    <!-- 6. Main Car Body & Fenders -->
+                                    <path
+                                        d="M 54,60 C 42,60 32,68 32,80 L 32,92 C 32,98 40,101 50,101 L 190,101 C 200,101 208,98 208,92 L 208,80 C 208,68 198,60 186,60 Z"
+                                        fill="url(#carRedGrad)" stroke="#881337" stroke-width="0.8" />
+
+                                    <!-- Hood Creases & Light Reflection -->
+                                    <path d="M 68,60 Q 120,63 172,60 L 164,74 Q 120,77 76,74 Z" fill="#ffffff"
+                                        opacity="0.12" />
+                                    <path d="M 78,60 Q 84,70 88,74" stroke="#f43f5e" stroke-width="0.8" fill="none"
+                                        opacity="0.6" />
+                                    <path d="M 162,60 Q 156,70 152,74" stroke="#f43f5e" stroke-width="0.8" fill="none"
+                                        opacity="0.6" />
+
+                                    <!-- 7. Matrix LED Headlights -->
+                                    <!-- Left Headlight -->
+                                    <path d="M 36,73 L 74,71 L 70,81 L 40,81 Z" fill="#0f172a" stroke="#cbd5e1"
+                                        stroke-width="0.8" />
+                                    <path d="M 38,72 L 73,71" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"
+                                        fill="none" />
+                                    <circle cx="48" cy="76" r="2.5" fill="#ffffff" />
+                                    <circle cx="58" cy="76" r="2.5" fill="#fef08a" />
+                                    <path d="M 37,76 L 39,80 L 37,80 Z" fill="#f59e0b" />
+
+                                    <!-- Right Headlight -->
+                                    <path d="M 204,73 L 166,71 L 170,81 L 200,81 Z" fill="#0f172a" stroke="#cbd5e1"
+                                        stroke-width="0.8" />
+                                    <path d="M 202,72 L 167,71" stroke="#38bdf8" stroke-width="1.5"
+                                        stroke-linecap="round" fill="none" />
+                                    <circle cx="192" cy="76" r="2.5" fill="#ffffff" />
+                                    <circle cx="182" cy="76" r="2.5" fill="#fef08a" />
+                                    <path d="M 203,76 L 201,80 L 203,80 Z" fill="#f59e0b" />
+
+                                    <!-- 8. Front Grille & Emblem -->
+                                    <path d="M 76,71 L 164,71 L 158,85 L 82,85 Z" fill="#090d16"
+                                        stroke="url(#chromeAccent)" stroke-width="1" />
+                                    <path d="M 76,71 L 164,71 L 158,85 L 82,85 Z" fill="url(#grillePattern)"
+                                        opacity="0.7" />
+                                    <ellipse cx="120" cy="75" rx="5" ry="3" fill="url(#chromeAccent)" stroke="#090d16"
+                                        stroke-width="0.5" />
+
+                                    <!-- 9. Lower Bumper & Fog Lights -->
+                                    <path d="M 40,84 L 72,84 L 70,95 L 44,95 Z" fill="#0f172a" stroke="#334155"
+                                        stroke-width="0.6" />
+                                    <circle cx="50" cy="89" r="2" fill="#fef08a" />
+
+                                    <path d="M 200,84 L 168,84 L 170,95 L 196,95 Z" fill="#0f172a" stroke="#334155"
+                                        stroke-width="0.6" />
+                                    <circle cx="190" cy="89" r="2" fill="#fef08a" />
+
+                                    <path d="M 76,87 L 164,87 L 160,96 L 80,96 Z" fill="#020617" stroke="#334155"
+                                        stroke-width="0.6" />
+
+                                    <!-- License Plate -->
+                                    <rect x="102" y="88" width="36" height="8" rx="1" fill="#f8fafc" stroke="#94a3b8"
+                                        stroke-width="0.6" />
+                                    <rect x="104" y="89" width="32" height="6" fill="#0284c7" rx="0.5" />
+                                    <text x="120" y="93.8" font-family="sans-serif" font-size="4.5" font-weight="bold"
+                                        fill="#ffffff" text-anchor="middle" letter-spacing="0.5">USA-911</text>
+
+                                    <!-- Lower Splitter -->
+                                    <path d="M 36,99 L 204,99 C 206,99 207,101 202,102 L 38,102 C 33,101 34,99 36,99 Z"
+                                        fill="#0f172a" />
+                                </svg>
+                            </div>
+                            <!-- Animated Segmented Garage Door -->
+                            <div class="w-full bg-white border-2 border-slate-300 rounded-t-lg transition-all animate-garage-slide flex flex-col justify-between p-1.5 shadow-xl relative z-20"
                                 style="height: 82%;">
                                 <!-- Panel 1 (Windows) -->
                                 <div
@@ -466,7 +614,7 @@
                     </a>
                 </div>
 
-                <!-- 2. REALISTIC CHIMNEY CARD (Brick Stack, Concrete Crown, Flue Cutaway & Hearth) -->
+                <!-- 2. Chimney Card -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-amber-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
                     data-aos="fade-up" data-aos-delay="200">
                     <div>
@@ -474,9 +622,9 @@
                             class="w-full h-36 bg-amber-50/40 border border-amber-200 rounded-xl mb-6 relative overflow-hidden flex flex-col items-center justify-end shadow-inner">
                             <div
                                 class="absolute top-2 left-2 text-[10px] font-mono text-amber-900 font-semibold bg-white/95 px-2 py-0.5 rounded border border-amber-200 shadow-sm z-30">
+                                <i class="fa-solid fa-fire text-amber-600 mr-1"></i>CHIMNEY_FLUE
                             </div>
 
-                            <!-- Chimney Cap (Spark Arrestor Mesh Cap at top) -->
                             <div
                                 class="w-14 h-3 bg-slate-300 border border-slate-400 rounded-t-sm z-20 flex justify-around items-center px-1 shadow-sm">
                                 <div class="w-1 h-2 bg-slate-500 rounded-sm"></div>
@@ -484,23 +632,17 @@
                                 <div class="w-1 h-2 bg-slate-500 rounded-sm"></div>
                             </div>
 
-                            <!-- Concrete Chimney Crown / Ledge -->
                             <div class="w-36 h-2 bg-slate-200 border border-slate-300 rounded-sm shadow-sm z-20"></div>
 
-                            <!-- Real Staggered Red Brick Chimney Structure -->
                             <div class="w-32 h-28 relative flex flex-col items-center justify-between overflow-hidden shadow-md z-10"
                                 style="background-color: #b91c1c; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Crect width='28' height='14' fill='%23b91c1c'/%3E%3Cpath d='M0 6.5h28M0 13.5h28M14 0v7M0 7v7' stroke='%23f1f5f9' stroke-width='1.2'/%3E%3C/svg%3E&quot;);">
 
-                                <!-- Cutaway Flue Tile Column inside brick stack -->
                                 <div
                                     class="w-14 h-full bg-amber-100/90 border-x-2 border-amber-400 relative flex flex-col items-center justify-end overflow-hidden shadow-inner">
-
-                                    <!-- SOOT CYCLE: Creosote & Soot layer coating flue liner -->
                                     <div
                                         class="absolute inset-0 bg-stone-900/90 animate-soot-cycle pointer-events-none z-10">
                                     </div>
 
-                                    <!-- Smoke Plumes Rising up the Flue tile -->
                                     <div
                                         class="absolute inset-0 flex flex-col items-center justify-end z-0 pointer-events-none pb-4">
                                         <div class="w-5 h-5 rounded-full bg-slate-400/80 blur-sm animate-smoke-1"></div>
@@ -508,12 +650,10 @@
                                         <div class="w-4 h-4 rounded-full bg-slate-400/80 blur-sm animate-smoke-3"></div>
                                     </div>
 
-                                    <!-- Hearth Fireplace Opening at base (Dark Masonry Firebox Arch) -->
                                     <div
                                         class="w-full h-8 bg-stone-900 border-t-2 border-amber-600/60 rounded-t-lg flex flex-col items-center justify-end relative z-20 pb-0.5 shadow-md">
                                         <i
                                             class="fa-solid fa-fire-flame-curved text-amber-500 text-lg animate-flame"></i>
-                                        <!-- Fireplace Log -->
                                         <div
                                             class="w-10 h-1.5 bg-amber-900 border border-amber-950 rounded-full mt-0.5">
                                         </div>
@@ -546,7 +686,7 @@
                     </a>
                 </div>
 
-                <!-- 3. Dryer Vent Card (Bright Mode) -->
+                <!-- 3. Dryer Vent Card -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-orange-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
                     data-aos="fade-up" data-aos-delay="300">
                     <div>
@@ -554,53 +694,44 @@
                             class="w-full h-36 bg-orange-50/50 border border-orange-200 rounded-xl mb-6 relative overflow-hidden flex items-center justify-between px-3 py-2 shadow-inner">
                             <div
                                 class="absolute top-2 left-2 text-[10px] font-mono text-orange-900 font-semibold bg-white/95 px-2 py-0.5 rounded border border-orange-200 shadow-sm z-30">
+                                <i class="fa-solid fa-wind text-orange-600 mr-1"></i>DRYER_EXHAUST
                             </div>
 
-                            <!-- Left: Dryer Back / Duct Connection -->
                             <div
                                 class="w-8 h-20 bg-slate-200 border-2 border-slate-300 rounded-l-lg shadow-sm flex flex-col justify-around items-center p-1 z-20">
                                 <div class="w-full h-1 bg-slate-300 rounded"></div>
                                 <div class="w-full h-1 bg-slate-300 rounded"></div>
                             </div>
 
-                            <!-- Center: Cutaway Exhaust Pipe showing Air Flow or Lint Clog -->
                             <div
                                 class="flex-1 h-12 bg-slate-100 border-y-2 border-slate-300 relative overflow-hidden flex items-center justify-center z-10 shadow-inner">
-
-                                <!-- Metallic Pipe Ribs -->
                                 <div
                                     class="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_2px,transparent_2px)] bg-[size:8px_100%] opacity-50">
                                 </div>
 
-                                <!-- Airflow Streaks (Active when clean) -->
                                 <div
                                     class="absolute inset-0 flex flex-col justify-around py-1 animate-airflow-active z-10">
                                     <div class="w-12 h-1 bg-sky-400 rounded-full animate-wind-1 shadow-sm"></div>
                                     <div class="w-16 h-1 bg-sky-400 rounded-full animate-wind-2 shadow-sm"></div>
                                 </div>
 
-                                <!-- Physical Lint Mass Clog (Grows and stops airflow) -->
                                 <div
                                     class="w-16 h-9 bg-stone-400/90 border border-stone-500 rounded-full blur-[0.5px] animate-lint-clog z-20 flex items-center justify-center shadow-md">
                                     <div class="w-10 h-5 bg-stone-500/80 rounded-full"></div>
                                 </div>
                             </div>
 
-                            <!-- Right: Exterior Brick Wall & Air Louver Cap -->
                             <div
                                 class="w-12 h-24 bg-amber-100 border-2 border-amber-300 rounded-r-lg relative flex items-center justify-center z-20 shadow-sm">
                                 <div
                                     class="absolute inset-0 bg-[linear-gradient(to_bottom,#b45309_1px,transparent_1px),linear-gradient(to_right,#b45309_1px,transparent_1px)] bg-[size:8px_6px] opacity-20">
                                 </div>
 
-                                <!-- Exterior Vent Hood Cap -->
                                 <div
                                     class="w-7 h-12 bg-white border-2 border-slate-300 rounded-r relative flex flex-col justify-around p-1 shadow">
-                                    <!-- Louver Flap 1: Forced open by air pressure, drops shut when clogged -->
                                     <div
                                         class="w-full h-2.5 bg-slate-300 border border-slate-400 rounded animate-louver-flap shadow-sm">
                                     </div>
-                                    <!-- Louver Flap 2 -->
                                     <div
                                         class="w-full h-2.5 bg-slate-300 border border-slate-400 rounded animate-louver-flap shadow-sm">
                                     </div>
@@ -632,7 +763,7 @@
                     </a>
                 </div>
 
-                <!-- 4. Air Duct Card (Bright Mode) -->
+                <!-- 4. Air Duct Card -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-cyan-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
                     data-aos="fade-up" data-aos-delay="400">
                     <div>
@@ -640,21 +771,16 @@
                             class="w-full h-36 bg-sky-50/50 border border-sky-200 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center p-3 shadow-inner">
                             <div
                                 class="absolute top-2 left-2 text-[10px] font-mono text-sky-900 font-semibold bg-white/95 px-2 py-0.5 rounded border border-sky-200 shadow-sm z-30">
+                                <i class="fa-solid fa-fan text-sky-600 mr-1"></i>HVAC_REGISTER
                             </div>
 
-                            <!-- Household Wall / Ceiling Background -->
                             <div
                                 class="w-full h-full bg-slate-100 border border-slate-200 rounded-lg relative flex items-center justify-center overflow-hidden">
-
-                                <!-- Realistic HVAC Vent Register Frame -->
                                 <div
                                     class="w-44 h-24 bg-white border-4 border-slate-300 rounded-lg shadow-md relative flex flex-col justify-between p-2 z-10">
-
-                                    <!-- Metal Register Louver Slats -->
                                     <div class="w-full h-1.5 bg-slate-200 border-b border-slate-300 rounded-sm"></div>
                                     <div
                                         class="w-full h-1.5 bg-slate-200 border-b border-slate-300 rounded-sm relative">
-                                        <!-- Streamer Ribbon 1 attached to louver slat -->
                                         <div
                                             class="absolute -top-0.5 left-6 w-8 h-1 bg-sky-500 rounded-full animate-ribbon-1 z-30 shadow-sm">
                                         </div>
@@ -662,19 +788,16 @@
                                     <div class="w-full h-1.5 bg-slate-200 border-b border-slate-300 rounded-sm"></div>
                                     <div
                                         class="w-full h-1.5 bg-slate-200 border-b border-slate-300 rounded-sm relative">
-                                        <!-- Streamer Ribbon 2 attached to louver slat -->
                                         <div
                                             class="absolute -top-0.5 left-24 w-8 h-1 bg-sky-500 rounded-full animate-ribbon-2 z-30 shadow-sm">
                                         </div>
                                     </div>
                                     <div class="w-full h-1.5 bg-slate-200 border-b border-slate-300 rounded-sm"></div>
 
-                                    <!-- Dust & Grime Layer coating the Register -->
                                     <div
                                         class="absolute inset-0 bg-stone-500/80 rounded blur-[0.8px] animate-register-dust z-20 pointer-events-none">
                                     </div>
 
-                                    <!-- Bright Airflow Lines blowing OUT from behind the grille -->
                                     <div
                                         class="absolute inset-0 flex flex-col justify-around py-2 px-1 animate-airflow-active z-0">
                                         <div class="w-10 h-0.5 bg-sky-400 rounded-full animate-air-wave-1"></div>
@@ -682,7 +805,6 @@
                                         <div class="w-8 h-0.5 bg-sky-400 rounded-full animate-air-wave-3 ml-2"></div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
 
@@ -836,10 +958,8 @@
     <!-- AOS JS CDN -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS Scroll Animations
         AOS.init({ once: true, offset: 50, duration: 800 });
 
-        // Dynamic Phone Routing Simulation
         function generateLocalPhoneNumber() {
             setTimeout(() => {
                 const p = document.getElementById('dynamic-phone-number');
