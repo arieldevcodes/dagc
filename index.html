@@ -313,51 +313,67 @@
 
     <!-- Header -->
     <header class="relative w-full h-screen min-h-[650px] flex items-center justify-center overflow-hidden">
-        
+
         <!-- Video Background Container -->
         <div class="absolute inset-0 w-full h-full z-0">
-            <video autoplay loop muted playsinline preload="auto" class="w-full h-full object-cover filter brightness-90 contrast-105">
+            <video id="video1" autoplay muted playsinline preload="auto"
+                class="absolute inset-0 w-full h-full object-cover filter brightness-90 contrast-105 transition-opacity duration-1000 opacity-100">
                 <source src="3150354-uhd_4096_2160_25fps.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            <div class="absolute inset-0 video-overlay"></div>
+
+            <video id="video2" muted playsinline preload="auto"
+                class="absolute inset-0 w-full h-full object-cover filter brightness-90 contrast-105 transition-opacity duration-1000 opacity-0">
+                <source src="second-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+
+            <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]"></div>
         </div>
 
         <!-- Hero Content Overlay -->
         <div class="relative z-10 max-w-4xl mx-auto px-4 text-center mt-12">
             <!-- Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/30 text-sky-400 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 backdrop-blur-md">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-400/30 text-sky-400 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 backdrop-blur-md">
                 <i class="fa-solid fa-shield-halved"></i>
                 Licensed, Bonded & Insured • 24/7 Emergency Service
             </div>
 
             <!-- Headline -->
             <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight mb-6">
-                Premium Garage Door Repair & Automation
+                Premier Home Safety & Ventilation Maintenance
             </h1>
 
             <!-- Subheading -->
             <p class="text-base sm:text-xl text-slate-300 max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
-                Fast, reliable local technicians equipped for spring replacement, motor upgrades, automated gates, and custom door installations.
+                Fast, reliable local technicians equipped for spring replacement, motor upgrades, chimney sweeps, dryer
+                vent clearing, and HVAC air hygiene.
             </p>
 
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#quote" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-base transition shadow-xl shadow-sky-600/30 flex items-center justify-center gap-2">
+                <a href="#quote"
+                    class="w-full sm:w-auto px-8 py-4 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-base transition shadow-xl shadow-sky-600/30 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-calendar-check"></i>
                     <span>Get Free Estimate</span>
                 </a>
-                <a href="tel:18005550199" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-white border border-slate-700/80 font-bold text-base backdrop-blur-md transition flex items-center justify-center gap-2">
+                <a href="tel:18005550199"
+                    class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-white border border-slate-700/80 font-bold text-base backdrop-blur-md transition flex items-center justify-center gap-2">
                     <i class="fa-solid fa-phone-volume text-sky-400"></i>
                     <span>Call (800) 555-0199</span>
                 </a>
             </div>
 
             <!-- Trust Micro-Badges -->
-            <div class="mt-12 pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-8 text-slate-400 text-xs sm:text-sm">
-                <span class="flex items-center gap-2"><i class="fa-solid fa-star text-amber-400"></i> 4.9/5 Average Rating</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-clock text-sky-400"></i> Same-Day Arrival</span>
-                <span class="flex items-center gap-2"><i class="fa-solid fa-award text-emerald-400"></i> 10-Year Warranty</span>
+            <div
+                class="mt-12 pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-8 text-slate-400 text-xs sm:text-sm">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-star text-amber-400"></i> 4.9/5 Average
+                    Rating</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-clock text-sky-400"></i> Same-Day
+                    Arrival</span>
+                <span class="flex items-center gap-2"><i class="fa-solid fa-award text-emerald-400"></i> 10-Year
+                    Warranty</span>
             </div>
         </div>
     </header>
@@ -414,7 +430,7 @@
             <!-- Services Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                <!-- 1. Garage Door Card (REALISTIC EVERYDAY SEDAN CAR) -->
+                <!-- 1. Garage Door Card -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-blue-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
                     data-aos="fade-up" data-aos-delay="100">
                     <div>
@@ -446,7 +462,6 @@
                                 class="absolute bottom-1 left-1/2 -translate-x-1/2 w-44 h-24 z-10 flex items-end justify-center">
                                 <svg viewBox="0 0 240 120" class="w-full h-full overflow-visible">
                                     <defs>
-                                        <!-- Metallic Body Paint Gradient (Crimson Red) -->
                                         <linearGradient id="carRedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                                             <stop offset="0%" stop-color="#881337" />
                                             <stop offset="22%" stop-color="#9f1239" />
@@ -457,28 +472,24 @@
                                             <stop offset="100%" stop-color="#881337" />
                                         </linearGradient>
 
-                                        <!-- Windshield Glass Gradient -->
                                         <linearGradient id="windshieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
                                             <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.65" />
                                             <stop offset="40%" stop-color="#1e293b" stop-opacity="0.85" />
                                             <stop offset="100%" stop-color="#020617" stop-opacity="0.95" />
                                         </linearGradient>
 
-                                        <!-- Glass Reflection Glare -->
                                         <linearGradient id="glassGlare" x1="0%" y1="0%" x2="100%" y2="100%">
                                             <stop offset="0%" stop-color="#ffffff" stop-opacity="0.0" />
                                             <stop offset="40%" stop-color="#ffffff" stop-opacity="0.25" />
                                             <stop offset="60%" stop-color="#ffffff" stop-opacity="0.0" />
                                         </linearGradient>
 
-                                        <!-- Chrome Trim Gradient -->
                                         <linearGradient id="chromeAccent" x1="0%" y1="0%" x2="0%" y2="100%">
                                             <stop offset="0%" stop-color="#ffffff" />
                                             <stop offset="50%" stop-color="#cbd5e1" />
                                             <stop offset="100%" stop-color="#64748b" />
                                         </linearGradient>
 
-                                        <!-- Honeycomb Grille Pattern -->
                                         <pattern id="grillePattern" width="6" height="6" patternUnits="userSpaceOnUse">
                                             <path d="M 3,0 L 6,1.7 L 6,5 L 3,6.7 L 0,5 L 0,1.7 Z" fill="none"
                                                 stroke="#334155" stroke-width="0.5" />
@@ -489,19 +500,17 @@
                                     <ellipse cx="120" cy="107" rx="88" ry="5" fill="#000000" opacity="0.55"
                                         filter="blur(2px)" />
 
-                                    <!-- 2. Tires (Proper Alignment) -->
+                                    <!-- 2. Tires -->
                                     <rect x="33" y="78" width="20" height="28" rx="4" fill="#0f172a" />
                                     <rect x="35" y="80" width="16" height="24" rx="2" fill="#1e293b" />
 
                                     <rect x="187" y="78" width="20" height="28" rx="4" fill="#0f172a" />
                                     <rect x="189" y="80" width="16" height="24" rx="2" fill="#1e293b" />
 
-                                    <!-- 3. Aero Side Mirrors (Attached to Door Pillars) -->
-                                    <!-- Left Mirror -->
+                                    <!-- 3. Aero Side Mirrors -->
                                     <path d="M 52,58 L 36,54 C 32,53 31,58 34,61 L 50,63 Z" fill="url(#carRedGrad)" />
                                     <path d="M 36,55 L 48,58 L 47,61 L 35,59 Z" fill="#020617" opacity="0.7" />
 
-                                    <!-- Right Mirror -->
                                     <path d="M 188,58 L 204,54 C 208,53 209,58 206,61 L 190,63 Z"
                                         fill="url(#carRedGrad)" />
                                     <path d="M 204,55 L 192,58 L 193,61 L 205,59 Z" fill="#020617" opacity="0.7" />
@@ -519,7 +528,7 @@
                                         d="M 85,32 Q 120,29 155,32 C 165,32 176,53 179,58 L 61,58 C 64,53 75,32 85,32 Z"
                                         fill="url(#glassGlare)" />
 
-                                    <!-- Interior Mirrors & Seats -->
+                                    <!-- Interior Seats -->
                                     <rect x="117" y="32" width="6" height="3" rx="1" fill="#64748b" />
                                     <path d="M 92,48 Q 96,40 100,48 Z" fill="#1e293b" />
                                     <path d="M 140,48 Q 144,40 148,48 Z" fill="#1e293b" />
@@ -530,47 +539,32 @@
                                     <line x1="126" y1="56" x2="160" y2="54" stroke="#0f172a" stroke-width="1"
                                         stroke-linecap="round" />
 
-                                    <!-- 6. Main Car Body & Fenders -->
+                                    <!-- 6. Main Car Body -->
                                     <path
                                         d="M 54,60 C 42,60 32,68 32,80 L 32,92 C 32,98 40,101 50,101 L 190,101 C 200,101 208,98 208,92 L 208,80 C 208,68 198,60 186,60 Z"
                                         fill="url(#carRedGrad)" stroke="#881337" stroke-width="0.8" />
 
-                                    <!-- Hood Creases & Light Reflection -->
                                     <path d="M 68,60 Q 120,63 172,60 L 164,74 Q 120,77 76,74 Z" fill="#ffffff"
                                         opacity="0.12" />
-                                    <path d="M 78,60 Q 84,70 88,74" stroke="#f43f5e" stroke-width="0.8" fill="none"
-                                        opacity="0.6" />
-                                    <path d="M 162,60 Q 156,70 152,74" stroke="#f43f5e" stroke-width="0.8" fill="none"
-                                        opacity="0.6" />
 
-                                    <!-- 7. Matrix LED Headlights -->
-                                    <!-- Left Headlight -->
+                                    <!-- 7. Headlights -->
                                     <path d="M 36,73 L 74,71 L 70,81 L 40,81 Z" fill="#0f172a" stroke="#cbd5e1"
                                         stroke-width="0.8" />
-                                    <path d="M 38,72 L 73,71" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"
-                                        fill="none" />
                                     <circle cx="48" cy="76" r="2.5" fill="#ffffff" />
                                     <circle cx="58" cy="76" r="2.5" fill="#fef08a" />
-                                    <path d="M 37,76 L 39,80 L 37,80 Z" fill="#f59e0b" />
 
-                                    <!-- Right Headlight -->
                                     <path d="M 204,73 L 166,71 L 170,81 L 200,81 Z" fill="#0f172a" stroke="#cbd5e1"
                                         stroke-width="0.8" />
-                                    <path d="M 202,72 L 167,71" stroke="#38bdf8" stroke-width="1.5"
-                                        stroke-linecap="round" fill="none" />
                                     <circle cx="192" cy="76" r="2.5" fill="#ffffff" />
                                     <circle cx="182" cy="76" r="2.5" fill="#fef08a" />
-                                    <path d="M 203,76 L 201,80 L 203,80 Z" fill="#f59e0b" />
 
-                                    <!-- 8. Front Grille & Emblem -->
+                                    <!-- 8. Front Grille -->
                                     <path d="M 76,71 L 164,71 L 158,85 L 82,85 Z" fill="#090d16"
                                         stroke="url(#chromeAccent)" stroke-width="1" />
                                     <path d="M 76,71 L 164,71 L 158,85 L 82,85 Z" fill="url(#grillePattern)"
                                         opacity="0.7" />
-                                    <ellipse cx="120" cy="75" rx="5" ry="3" fill="url(#chromeAccent)" stroke="#090d16"
-                                        stroke-width="0.5" />
 
-                                    <!-- 9. Lower Bumper & Fog Lights -->
+                                    <!-- 9. Lower Bumper & License Plate -->
                                     <path d="M 40,84 L 72,84 L 70,95 L 44,95 Z" fill="#0f172a" stroke="#334155"
                                         stroke-width="0.6" />
                                     <circle cx="50" cy="89" r="2" fill="#fef08a" />
@@ -581,279 +575,219 @@
 
                                     <path d="M 76,87 L 164,87 L 160,96 L 80,96 Z" fill="#020617" stroke="#334155"
                                         stroke-width="0.6" />
-
-                                    <!-- License Plate -->
-                                    <rect x="102" y="88" width="36" height="8" rx="1" fill="#f8fafc" stroke="#94a3b8"
-                                        stroke-width="0.6" />
-                                    <rect x="104" y="89" width="32" height="6" fill="#0284c7" rx="0.5" />
-                                    <text x="120" y="93.8" font-family="sans-serif" font-size="4.5" font-weight="bold"
-                                        fill="#ffffff" text-anchor="middle" letter-spacing="0.5">USA-911</text>
-
-                                    <!-- Lower Splitter -->
-                                    <path d="M 36,99 L 204,99 C 206,99 207,101 202,102 L 38,102 C 33,101 34,99 36,99 Z"
-                                        fill="#0f172a" />
+                                    <rect x="104" y="89" width="32" height="6" rx="1" fill="#ffffff" stroke="#94a3b8"
+                                        stroke-width="0.5" />
+                                    <text x="120" y="93.5" font-family="monospace" font-size="3.5" font-weight="bold"
+                                        fill="#0f172a" text-anchor="middle">USA-2026</text>
                                 </svg>
                             </div>
-                            <!-- Animated Segmented Garage Door -->
-                            <div class="w-full bg-white border-2 border-slate-300 rounded-t-lg transition-all animate-garage-slide flex flex-col justify-between p-1.5 shadow-xl relative z-20"
-                                style="height: 82%;">
-                                <!-- Panel 1 (Windows) -->
+
+                            <!-- Sliding Garage Door Panels -->
+                            <div class="absolute inset-0 z-20 pointer-events-none overflow-hidden">
                                 <div
-                                    class="w-full h-5 bg-slate-100 border border-slate-200 rounded flex justify-around items-center px-1">
-                                    <div class="w-3.5 h-2.5 bg-sky-200 border border-sky-400 rounded-sm"></div>
-                                    <div class="w-3.5 h-2.5 bg-sky-200 border border-sky-400 rounded-sm"></div>
-                                    <div class="w-3.5 h-2.5 bg-sky-200 border border-sky-400 rounded-sm"></div>
-                                    <div class="w-3.5 h-2.5 bg-sky-200 border border-sky-400 rounded-sm"></div>
-                                </div>
-                                <!-- Panel 2 -->
-                                <div class="w-full h-4 bg-slate-50 border border-slate-200 rounded"></div>
-                                <!-- Panel 3 -->
-                                <div class="w-full h-4 bg-slate-50 border border-slate-200 rounded"></div>
-                                <!-- Panel 4 (Handle) -->
-                                <div
-                                    class="w-full h-4 bg-slate-50 border border-slate-200 rounded flex items-center justify-center">
-                                    <div class="w-4 h-1 bg-slate-400 rounded-full"></div>
+                                    class="w-full h-full bg-slate-800/90 border-b-4 border-amber-500 animate-garage-slide flex flex-col justify-between p-2">
+                                    <div class="h-1/4 w-full border-b border-slate-700/60 bg-slate-700/40 rounded-sm">
+                                    </div>
+                                    <div class="h-1/4 w-full border-b border-slate-700/60 bg-slate-700/40 rounded-sm">
+                                    </div>
+                                    <div class="h-1/4 w-full border-b border-slate-700/60 bg-slate-700/40 rounded-sm">
+                                    </div>
+                                    <div class="h-1/4 w-full bg-slate-700/40 rounded-sm"></div>
                                 </div>
                             </div>
                         </div>
 
-                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
-                            Garage Door Services
-                        </h3>
-                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                            Spring replacements, track alignment, high-torque motor repair, and custom door panel
-                            installations.
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Garage Door Services</h3>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            Heavy-duty spring replacement, smart motor installs, track realignments, and panel repair.
                         </p>
-
-                        <ul class="text-xs font-mono text-slate-600 space-y-1.5 border-t border-slate-100 pt-3 mb-6">
-                            <li><i class="fa-solid fa-check text-blue-600 mr-1.5"></i> Torsion & Extension Springs</li>
-                            <li><i class="fa-solid fa-check text-blue-600 mr-1.5"></i> Smart Opener Integration</li>
-                            <li><i class="fa-solid fa-check text-blue-600 mr-1.5"></i> Emergency Off-Track Repair</li>
-                        </ul>
                     </div>
 
-                    <a href="garage-door.html"
-                        class="w-full bg-slate-100 hover:bg-blue-600 text-slate-800 hover:text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 text-center flex items-center justify-center text-xs group/btn shadow-sm">
-                        <span>Learn More</span>
-                        <i
-                            class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6 border-t border-slate-100 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Torsion &
+                            Extension Springs</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Quiet Belt
+                            Drive Openers</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Emergency
+                            Off-Track Fix</li>
+                    </ul>
+
+                    <a href="#quote"
+                        class="w-full py-2.5 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 font-semibold text-xs rounded-lg transition-colors text-center block">
+                        Schedule Repair
                     </a>
                 </div>
 
-                <!-- 2. Chimney Card -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-amber-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                <!-- 2. Chimney Sweep Card -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-blue-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
                     data-aos="fade-up" data-aos-delay="200">
                     <div>
                         <div
-                            class="w-full h-36 bg-amber-50/40 border border-amber-200 rounded-xl mb-6 relative overflow-hidden flex flex-col items-center justify-end shadow-inner">
+                            class="w-full h-36 bg-slate-900 border border-slate-800 rounded-xl mb-6 relative overflow-hidden flex items-end justify-center p-2 shadow-inner">
                             <div
-                                class="absolute top-2 left-2 text-[10px] font-mono text-amber-900 font-semibold bg-white/95 px-2 py-0.5 rounded border border-amber-200 shadow-sm z-30">
-                                <i class="fa-solid fa-fire text-amber-600 mr-1"></i>CHIMNEY_FLUE
+                                class="absolute top-2 left-2 text-[10px] font-mono text-slate-300 font-semibold bg-slate-800/90 px-2 py-0.5 rounded border border-slate-700 shadow-sm z-30">
+                                <i class="fa-solid fa-fire text-amber-500 mr-1"></i>FLUE_DIAGNOSTIC
                             </div>
 
+                            <!-- Chimney Structure -->
                             <div
-                                class="w-14 h-3 bg-slate-300 border border-slate-400 rounded-t-sm z-20 flex justify-around items-center px-1 shadow-sm">
-                                <div class="w-1 h-2 bg-slate-500 rounded-sm"></div>
-                                <div class="w-1 h-2 bg-slate-500 rounded-sm"></div>
-                                <div class="w-1 h-2 bg-slate-500 rounded-sm"></div>
-                            </div>
-
-                            <div class="w-36 h-2 bg-slate-200 border border-slate-300 rounded-sm shadow-sm z-20"></div>
-
-                            <div class="w-32 h-28 relative flex flex-col items-center justify-between overflow-hidden shadow-md z-10"
-                                style="background-color: #b91c1c; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14'%3E%3Crect width='28' height='14' fill='%23b91c1c'/%3E%3Cpath d='M0 6.5h28M0 13.5h28M14 0v7M0 7v7' stroke='%23f1f5f9' stroke-width='1.2'/%3E%3C/svg%3E&quot;);">
-
+                                class="absolute inset-y-0 left-10 right-10 bg-stone-800 border-x-2 border-stone-700 flex flex-col items-center justify-end">
+                                <!-- Smoke Animation -->
                                 <div
-                                    class="w-14 h-full bg-amber-100/90 border-x-2 border-amber-400 relative flex flex-col items-center justify-end overflow-hidden shadow-inner">
-                                    <div
-                                        class="absolute inset-0 bg-stone-900/90 animate-soot-cycle pointer-events-none z-10">
-                                    </div>
+                                    class="absolute top-2 w-4 h-4 rounded-full bg-slate-400 opacity-0 animate-smoke-1">
+                                </div>
+                                <div
+                                    class="absolute top-2 w-5 h-5 rounded-full bg-slate-400 opacity-0 animate-smoke-2">
+                                </div>
+                                <div
+                                    class="absolute top-2 w-6 h-6 rounded-full bg-slate-400 opacity-0 animate-smoke-3">
+                                </div>
 
+                                <!-- Fireplace Flame -->
+                                <div class="w-12 h-10 bg-amber-500/20 rounded-t-full flex items-end justify-center">
                                     <div
-                                        class="absolute inset-0 flex flex-col items-center justify-end z-0 pointer-events-none pb-4">
-                                        <div class="w-5 h-5 rounded-full bg-slate-400/80 blur-sm animate-smoke-1"></div>
-                                        <div class="w-6 h-6 rounded-full bg-slate-500/80 blur-sm animate-smoke-2"></div>
-                                        <div class="w-4 h-4 rounded-full bg-slate-400/80 blur-sm animate-smoke-3"></div>
+                                        class="w-6 h-8 bg-amber-500 rounded-t-full animate-flame flex items-end justify-center">
+                                        <div class="w-3 h-5 bg-yellow-300 rounded-t-full"></div>
                                     </div>
+                                </div>
 
-                                    <div
-                                        class="w-full h-8 bg-stone-900 border-t-2 border-amber-600/60 rounded-t-lg flex flex-col items-center justify-end relative z-20 pb-0.5 shadow-md">
-                                        <i
-                                            class="fa-solid fa-fire-flame-curved text-amber-500 text-lg animate-flame"></i>
-                                        <div
-                                            class="w-10 h-1.5 bg-amber-900 border border-amber-950 rounded-full mt-0.5">
-                                        </div>
-                                    </div>
+                                <!-- Creosote Soot Layer (Cycles) -->
+                                <div
+                                    class="absolute inset-0 bg-stone-950/80 animate-soot-cycle pointer-events-none flex items-center justify-center">
+                                    <span class="text-[9px] font-mono text-rose-400 font-bold bg-slate-950/90 px-1.5 py-0.5 rounded border border-rose-900/50">CREOSOTE DETECTED</span>
                                 </div>
                             </div>
                         </div>
 
-                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">
-                            Chimney & Fireplace
-                        </h3>
-                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                            Creosote removal, flue lining inspections, masonry repair, and draft performance testing.
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Chimney & Fireplace</h3>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            Full video flue inspections, creosote scraping, masonry repointing, and stainless cap installation.
                         </p>
-
-                        <ul class="text-xs font-mono text-slate-600 space-y-1.5 border-t border-slate-100 pt-3 mb-6">
-                            <li><i class="fa-solid fa-check text-amber-600 mr-1.5"></i> Level 1 & Level 2 Inspections
-                            </li>
-                            <li><i class="fa-solid fa-check text-amber-600 mr-1.5"></i> Flue Glaze Creosote Scrubbing
-                            </li>
-                            <li><i class="fa-solid fa-check text-amber-600 mr-1.5"></i> Crown & Cap Waterproofing</li>
-                        </ul>
                     </div>
 
-                    <a href="chimney.html"
-                        class="w-full bg-slate-100 hover:bg-amber-600 text-slate-800 hover:text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 text-center flex items-center justify-center text-xs group/btn shadow-sm">
-                        <span>Learn More</span>
-                        <i
-                            class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6 border-t border-slate-100 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Stage 1-3
+                            Creosote Removal</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Draft &
+                            Damper Inspection</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Spark
+                            Arrestor Caps</li>
+                    </ul>
+
+                    <a href="#quote"
+                        class="w-full py-2.5 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 font-semibold text-xs rounded-lg transition-colors text-center block">
+                        Book Chimney Sweep
                     </a>
                 </div>
 
                 <!-- 3. Dryer Vent Card -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-orange-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-blue-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
                     data-aos="fade-up" data-aos-delay="300">
                     <div>
                         <div
-                            class="w-full h-36 bg-orange-50/50 border border-orange-200 rounded-xl mb-6 relative overflow-hidden flex items-center justify-between px-3 py-2 shadow-inner">
+                            class="w-full h-36 bg-slate-900 border border-slate-800 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center p-2 shadow-inner">
                             <div
-                                class="absolute top-2 left-2 text-[10px] font-mono text-orange-900 font-semibold bg-white/95 px-2 py-0.5 rounded border border-orange-200 shadow-sm z-30">
-                                <i class="fa-solid fa-wind text-orange-600 mr-1"></i>DRYER_EXHAUST
+                                class="absolute top-2 left-2 text-[10px] font-mono text-slate-300 font-semibold bg-slate-800/90 px-2 py-0.5 rounded border border-slate-700 shadow-sm z-30">
+                                <i class="fa-solid fa-wind text-sky-400 mr-1"></i>VENT_AIRFLOW
                             </div>
 
+                            <!-- External Wall & Vent Housing -->
                             <div
-                                class="w-8 h-20 bg-slate-200 border-2 border-slate-300 rounded-l-lg shadow-sm flex flex-col justify-around items-center p-1 z-20">
-                                <div class="w-full h-1 bg-slate-300 rounded"></div>
-                                <div class="w-full h-1 bg-slate-300 rounded"></div>
-                            </div>
-
-                            <div
-                                class="flex-1 h-12 bg-slate-100 border-y-2 border-slate-300 relative overflow-hidden flex items-center justify-center z-10 shadow-inner">
-                                <div
-                                    class="absolute inset-0 bg-[linear-gradient(to_right,#cbd5e1_2px,transparent_2px)] bg-[size:8px_100%] opacity-50">
+                                class="w-28 h-20 bg-slate-800 border border-slate-700 rounded-lg relative overflow-hidden flex items-center justify-between px-2">
+                                <!-- Wind Flow Lines -->
+                                <div class="absolute inset-0 flex flex-col justify-around py-2 opacity-30">
+                                    <div class="h-0.5 bg-sky-400 w-full animate-wind-1"></div>
+                                    <div class="h-0.5 bg-sky-400 w-full animate-wind-2"></div>
                                 </div>
 
+                                <!-- Louver Hood Flap -->
                                 <div
-                                    class="absolute inset-0 flex flex-col justify-around py-1 animate-airflow-active z-10">
-                                    <div class="w-12 h-1 bg-sky-400 rounded-full animate-wind-1 shadow-sm"></div>
-                                    <div class="w-16 h-1 bg-sky-400 rounded-full animate-wind-2 shadow-sm"></div>
+                                    class="w-full h-full border-r-4 border-slate-600 flex flex-col justify-around py-2">
+                                    <div class="h-1.5 bg-slate-500 rounded animate-louver-flap"></div>
+                                    <div class="h-1.5 bg-slate-500 rounded animate-louver-flap"></div>
+                                    <div class="h-1.5 bg-slate-500 rounded animate-louver-flap"></div>
                                 </div>
 
+                                <!-- Lint Clog Overlay -->
                                 <div
-                                    class="w-16 h-9 bg-stone-400/90 border border-stone-500 rounded-full blur-[0.5px] animate-lint-clog z-20 flex items-center justify-center shadow-md">
-                                    <div class="w-10 h-5 bg-stone-500/80 rounded-full"></div>
-                                </div>
-                            </div>
-
-                            <div
-                                class="w-12 h-24 bg-amber-100 border-2 border-amber-300 rounded-r-lg relative flex items-center justify-center z-20 shadow-sm">
-                                <div
-                                    class="absolute inset-0 bg-[linear-gradient(to_bottom,#b45309_1px,transparent_1px),linear-gradient(to_right,#b45309_1px,transparent_1px)] bg-[size:8px_6px] opacity-20">
-                                </div>
-
-                                <div
-                                    class="w-7 h-12 bg-white border-2 border-slate-300 rounded-r relative flex flex-col justify-around p-1 shadow">
-                                    <div
-                                        class="w-full h-2.5 bg-slate-300 border border-slate-400 rounded animate-louver-flap shadow-sm">
-                                    </div>
-                                    <div
-                                        class="w-full h-2.5 bg-slate-300 border border-slate-400 rounded animate-louver-flap shadow-sm">
-                                    </div>
+                                    class="absolute inset-0 bg-stone-700/85 animate-lint-clog pointer-events-none flex items-center justify-center">
+                                    <span class="text-[9px] font-mono text-amber-300 font-bold bg-stone-900/90 px-1 py-0.5 rounded border border-amber-500/50">LINT CLOG</span>
                                 </div>
                             </div>
                         </div>
 
-                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-500 transition-colors">
-                            Dryer Vent Cleaning
-                        </h3>
-                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                            Deep rotary brush extraction, fire hazard prevention, and exterior vent cap clearing.
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Dryer Vent Cleaning</h3>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            High-velocity rotary brush cleaning to eliminate fire hazards and improve drying efficiency.
                         </p>
-
-                        <ul class="text-xs font-mono text-slate-600 space-y-1.5 border-t border-slate-100 pt-3 mb-6">
-                            <li><i class="fa-solid fa-check text-orange-500 mr-1.5"></i> Full-Length Rotary Scrubbing
-                            </li>
-                            <li><i class="fa-solid fa-check text-orange-500 mr-1.5"></i> Exterior Cap & Pest Screen</li>
-                            <li><i class="fa-solid fa-check text-orange-500 mr-1.5"></i> UL-723 Transition Hose Check
-                            </li>
-                        </ul>
                     </div>
 
-                    <a href="dryer-vent.html"
-                        class="w-full bg-slate-100 hover:bg-orange-500 text-slate-800 hover:text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 text-center flex items-center justify-center text-xs group/btn shadow-sm">
-                        <span>Learn More</span>
-                        <i
-                            class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6 border-t border-slate-100 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Rotary
+                            Snake Extraction</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Airflow
+                            CFM Testing</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Fire
+                            Hazard Prevention</li>
+                    </ul>
+
+                    <a href="#quote"
+                        class="w-full py-2.5 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 font-semibold text-xs rounded-lg transition-colors text-center block">
+                        Clear Dryer Vent
                     </a>
                 </div>
 
-                <!-- 4. Air Duct Card -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-cyan-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                <!-- 4. Air Duct Hygiene Card -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-blue-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
                     data-aos="fade-up" data-aos-delay="400">
                     <div>
                         <div
-                            class="w-full h-36 bg-sky-50/50 border border-sky-200 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center p-3 shadow-inner">
+                            class="w-full h-36 bg-slate-900 border border-slate-800 rounded-xl mb-6 relative overflow-hidden flex items-center justify-center p-2 shadow-inner">
                             <div
-                                class="absolute top-2 left-2 text-[10px] font-mono text-sky-900 font-semibold bg-white/95 px-2 py-0.5 rounded border border-sky-200 shadow-sm z-30">
-                                <i class="fa-solid fa-fan text-sky-600 mr-1"></i>HVAC_REGISTER
+                                class="absolute top-2 left-2 text-[10px] font-mono text-slate-300 font-semibold bg-slate-800/90 px-2 py-0.5 rounded border border-slate-700 shadow-sm z-30">
+                                <i class="fa-solid fa-fan text-emerald-400 mr-1"></i>HVAC_HYGIENE
                             </div>
 
+                            <!-- HVAC Register Vent -->
                             <div
-                                class="w-full h-full bg-slate-100 border border-slate-200 rounded-lg relative flex items-center justify-center overflow-hidden">
+                                class="w-32 h-20 bg-slate-800 border-2 border-slate-600 rounded flex flex-col justify-between p-1.5 relative">
+                                <div class="grid grid-cols-4 gap-1 h-full">
+                                    <div class="bg-slate-700 rounded-sm"></div>
+                                    <div class="bg-slate-700 rounded-sm"></div>
+                                    <div class="bg-slate-700 rounded-sm"></div>
+                                    <div class="bg-slate-700 rounded-sm"></div>
+                                </div>
+
+                                <!-- Air Stream Flow Ripples -->
+                                <div class="absolute -right-4 top-2 h-2 w-6 bg-sky-400/60 rounded-full blur-[1px] animate-air-wave-1"></div>
+                                <div class="absolute -right-4 top-8 h-2 w-6 bg-sky-400/60 rounded-full blur-[1px] animate-air-wave-2"></div>
+                                <div class="absolute -right-4 top-14 h-2 w-6 bg-sky-400/60 rounded-full blur-[1px] animate-air-wave-3"></div>
+
+                                <!-- Dust & Mold Accumulation Cycle -->
                                 <div
-                                    class="w-44 h-24 bg-white border-4 border-slate-300 rounded-lg shadow-md relative flex flex-col justify-between p-2 z-10">
-                                    <div class="w-full h-1.5 bg-slate-200 border-b border-slate-300 rounded-sm"></div>
-                                    <div
-                                        class="w-full h-1.5 bg-slate-200 border-b border-slate-300 rounded-sm relative">
-                                        <div
-                                            class="absolute -top-0.5 left-6 w-8 h-1 bg-sky-500 rounded-full animate-ribbon-1 z-30 shadow-sm">
-                                        </div>
-                                    </div>
-                                    <div class="w-full h-1.5 bg-slate-200 border-b border-slate-300 rounded-sm"></div>
-                                    <div
-                                        class="w-full h-1.5 bg-slate-200 border-b border-slate-300 rounded-sm relative">
-                                        <div
-                                            class="absolute -top-0.5 left-24 w-8 h-1 bg-sky-500 rounded-full animate-ribbon-2 z-30 shadow-sm">
-                                        </div>
-                                    </div>
-                                    <div class="w-full h-1.5 bg-slate-200 border-b border-slate-300 rounded-sm"></div>
-
-                                    <div
-                                        class="absolute inset-0 bg-stone-500/80 rounded blur-[0.8px] animate-register-dust z-20 pointer-events-none">
-                                    </div>
-
-                                    <div
-                                        class="absolute inset-0 flex flex-col justify-around py-2 px-1 animate-airflow-active z-0">
-                                        <div class="w-10 h-0.5 bg-sky-400 rounded-full animate-air-wave-1"></div>
-                                        <div class="w-12 h-0.5 bg-sky-400 rounded-full animate-air-wave-2 ml-4"></div>
-                                        <div class="w-8 h-0.5 bg-sky-400 rounded-full animate-air-wave-3 ml-2"></div>
-                                    </div>
+                                    class="absolute inset-0 bg-yellow-950/70 animate-register-dust pointer-events-none flex items-center justify-center">
+                                    <span class="text-[9px] font-mono text-yellow-300 font-bold bg-slate-950/90 px-1 py-0.5 rounded border border-yellow-600/50">DUST & ALLERGENS</span>
                                 </div>
                             </div>
                         </div>
 
-                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-cyan-500 transition-colors">
-                            Air Duct & HVAC
-                        </h3>
-                        <p class="text-slate-600 text-xs leading-relaxed mb-4">
-                            HEPA negative-air pressure vacuuming, dust removal, and coil sanitizer treatment.
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Air Duct & HVAC Cleaning</h3>
+                        <p class="text-sm text-slate-600 mb-4 leading-relaxed">
+                            Whole-home negative pressure duct sanitization, blower wheel cleaning, and coil treatment.
                         </p>
-
-                        <ul class="text-xs font-mono text-slate-600 space-y-1.5 border-t border-slate-100 pt-3 mb-6">
-                            <li><i class="fa-solid fa-check text-cyan-500 mr-1.5"></i> Negative Pressure HEPA Vacuum
-                            </li>
-                            <li><i class="fa-solid fa-check text-cyan-500 mr-1.5"></i> Mold & Allergen Removal</li>
-                            <li><i class="fa-solid fa-check text-cyan-500 mr-1.5"></i> Blower & Coil Deep Wash</li>
-                        </ul>
                     </div>
 
-                    <a href="air-duct.html"
-                        class="w-full bg-slate-100 hover:bg-cyan-500 text-slate-800 hover:text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 text-center flex items-center justify-center text-xs group/btn shadow-sm">
-                        <span>Learn More</span>
-                        <i
-                            class="fa-solid fa-arrow-right ml-2 text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6 border-t border-slate-100 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>HEPA
+                            Vacuum Extraction</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Antimicrobial Fogging</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Return &
+                            Supply Registers</li>
+                    </ul>
+
+                    <a href="#quote"
+                        class="w-full py-2.5 bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-700 font-semibold text-xs rounded-lg transition-colors text-center block">
+                        Clean Air Ducts
                     </a>
                 </div>
 
@@ -861,142 +795,127 @@
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section id="why-us" class="py-20 bg-white border-t border-slate-200">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Why EliteHomeUSA?</h2>
-                <p class="text-slate-600 mt-3">Dedicated to safety, precision workmanship, and complete customer
-                    satisfaction.</p>
+    <!-- Estimate & Contact Section -->
+    <section id="quote" class="py-20 bg-slate-900 text-white relative">
+        <div class="container mx-auto px-6 max-w-4xl relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-extrabold tracking-tight">Request Your Free Estimate</h2>
+                <p class="text-slate-400 mt-2">Get instant upfront pricing with no hidden fees.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div
-                        class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto text-2xl mb-4">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 text-lg mb-2">Licensed & Insured</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Fully certified technicians covered by
-                        comprehensive liability insurance.</p>
+            <form class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-8 backdrop-blur-md shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up">
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-2">Full Name</label>
+                    <input type="text" placeholder="John Doe" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sky-500 text-white placeholder-slate-500">
                 </div>
 
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200" data-aos="fade-up"
-                    data-aos-delay="200">
-                    <div
-                        class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto text-2xl mb-4">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 text-lg mb-2">Same-Day Service</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">24/7 rapid emergency dispatch available for urgent
-                        household safety issues.</p>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-2">Phone Number</label>
+                    <input type="tel" placeholder="(555) 000-0000" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sky-500 text-white placeholder-slate-500">
                 </div>
 
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200" data-aos="fade-up"
-                    data-aos-delay="300">
-                    <div
-                        class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto text-2xl mb-4">
-                        <i class="fa-solid fa-magnifying-glass-chart"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 text-lg mb-2">Upfront Estimates</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Clear diagnostic reports and zero hidden fees
-                        before any work begins.</p>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-2">Select Service</label>
+                    <select class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sky-500 text-white">
+                        <option>Garage Door Repair / Service</option>
+                        <option>Chimney Sweep & Inspection</option>
+                        <option>Dryer Vent Cleaning</option>
+                        <option>Air Duct Sanitation</option>
+                    </select>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200" data-aos="fade-up"
-                    data-aos-delay="400">
-                    <div
-                        class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto text-2xl mb-4">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-900 text-lg mb-2">CSIA & NADCA</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed">Adhering strictly to national fire safety and
-                        indoor air quality standards.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dispatch Form Section -->
-    <section id="contact" class="py-20 bg-slate-900 text-white">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl">
-                <div class="text-center mb-8">
-                    <h3 class="text-2xl md:text-3xl font-extrabold text-white">Schedule Immediate Service</h3>
-                    <p class="text-slate-400 text-sm mt-2">Submit your request below for prompt dispatch routing.</p>
+                <div>
+                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-2">Zip Code</label>
+                    <input type="text" placeholder="90210" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sky-500 text-white placeholder-slate-500">
                 </div>
 
-                <form action="#" method="POST" class="space-y-6 text-sm">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">Full
-                                Name</label>
-                            <input type="text"
-                                class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
-                                placeholder="John Doe">
-                        </div>
-                        <div>
-                            <label class="block text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">Phone
-                                Number</label>
-                            <input type="tel"
-                                class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
-                                placeholder="(555) 000-0000">
-                        </div>
-                    </div>
+                <div class="md:col-span-2">
+                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-2">Details / Notes</label>
+                    <textarea rows="3" placeholder="Describe your issue or preferred schedule..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sky-500 text-white placeholder-slate-500"></textarea>
+                </div>
 
-                    <div>
-                        <label class="block text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">Service
-                            Needed</label>
-                        <select
-                            class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
-                            <option>Garage Door Repair / Installation</option>
-                            <option>Chimney Sweep & Inspection</option>
-                            <option>Dryer Vent Cleaning</option>
-                            <option>Air Duct & HVAC Cleaning</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label class="block text-slate-300 text-xs font-bold mb-2 uppercase tracking-wider">Additional
-                            Notes</label>
-                        <textarea rows="3"
-                            class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition"
-                            placeholder="Describe any specific issues..."></textarea>
-                    </div>
-
-                    <button type="submit"
-                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-600/30">
-                        Dispatch Local Technician
+                <div class="md:col-span-2">
+                    <button type="submit" class="w-full py-4 bg-sky-600 hover:bg-sky-500 font-bold rounded-xl text-white transition shadow-lg shadow-sky-600/30 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Submit Request</span>
                     </button>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-10 border-t border-slate-800">
-        <div class="container mx-auto px-6 text-center text-sm">
-            <p>&copy; 2026 EliteHomeUSA. Fire Hazard Prevention & Household Systems Care.</p>
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-12">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2 text-white font-extrabold text-xl">
+                <i class="fa-solid fa-house-chimney-crack text-sky-500"></i>
+                <span>EliteHome<span class="text-sky-500">USA</span></span>
+            </div>
+            <p class="text-xs text-slate-500">&copy; 2026 EliteHomeUSA. All rights reserved. Licensed & Insured Field Contractors.</p>
+            <div class="flex items-center gap-4 text-slate-400">
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+            </div>
         </div>
     </footer>
 
-    <!-- AOS JS CDN -->
+    <!-- AOS JS Library CDN -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ once: true, offset: 50, duration: 800 });
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true
+        });
 
-        function generateLocalPhoneNumber() {
-            setTimeout(() => {
-                const p = document.getElementById('dynamic-phone-number');
-                if (p) {
-                    p.innerText = "(214) 555-0199";
-                    p.parentElement.href = "tel:+12145550199";
-                    p.previousElementSibling.classList.remove('animate-pulse');
+        // Background Video Switcher Script with 3x Speed
+        document.addEventListener('DOMContentLoaded', () => {
+            const video1 = document.getElementById('video1');
+            const video2 = document.getElementById('video2');
+
+            if (!video1 || !video2) return;
+
+            const videos = [video1, video2];
+            let currentIdx = 0;
+
+            const SPEED = 3.0; // Set speed multiplier
+
+            // Set speed & event listeners for each video
+            videos.forEach(vid => {
+                vid.playbackRate = SPEED;
+                vid.addEventListener('ended', playNextVideo);
+            });
+
+            function playNextVideo() {
+                const currentVid = videos[currentIdx];
+                currentIdx = (currentIdx + 1) % videos.length;
+                const nextVid = videos[currentIdx];
+
+                // Reset time & enforce speed
+                nextVid.currentTime = 0;
+                nextVid.playbackRate = SPEED;
+
+                const playPromise = nextVid.play();
+
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        // Smoothly crossfade opacities once playback starts
+                        nextVid.classList.remove('opacity-0');
+                        nextVid.classList.add('opacity-100');
+
+                        currentVid.classList.remove('opacity-100');
+                        currentVid.classList.add('opacity-0');
+                    }).catch(err => {
+                        console.warn("Video playback was interrupted or prevented:", err);
+                    });
                 }
-            }, 1000);
-        }
-        window.onload = generateLocalPhoneNumber;
+            }
+
+            // Initial speed setup and play trigger
+            video1.playbackRate = SPEED;
+            video1.play().catch(err => console.warn("Initial video playback failed:", err));
+        });
     </script>
 </body>
 
