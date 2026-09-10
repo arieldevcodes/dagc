@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Door Systems | EliteHomeUSA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: { 'garage-roll': 'garageRoll 5s ease-in-out infinite alternate' },
+                    keyframes: {
+                        garageRoll: {
+                            '0%, 15%': { transform: 'translateY(0)' },
+                            '85%, 100%': { transform: 'translateY(-80%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="font-sans antialiased text-neutral-300 bg-neutral-950 overflow-x-hidden selection:bg-blue-500 selection:text-white">
+
+    <!-- Header -->
+    <header class="bg-neutral-950 border-b border-neutral-800 fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tight text-white flex items-center group">
+                <i class="fa-solid fa-arrow-left text-sm mr-4 text-neutral-500 group-hover:text-white transition-colors"></i>
+                <i class="fa-solid fa-warehouse mr-3 text-blue-500"></i> Elite<span class="text-blue-500 font-light">Garage</span>
+            </a>
+            <a href="tel:+18005550199" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-bold transition">
+                <i class="fa-solid fa-phone mr-2"></i> Call Dispatch
+            </a>
+        </div>
+    </header>
+
+    <!-- Dark Hero + Form -->
+    <section class="relative pt-28 pb-24 overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row gap-12 items-center">
+            
+            <div class="lg:w-1/2" data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Garage Door <br><span class="text-blue-400">Repair & Install</span></h1>
+                <p class="text-neutral-400 mb-8 text-lg">High-tension springs, broken tracks, and motor failures resolved in hours, not days. Local dispatch monitoring 24/7.</p>
+                
+                <!-- Enhanced Dark Mode Garage CSS Animation -->
+                <div class="w-full max-w-sm h-52 bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden relative shadow-[0_10px_30px_rgba(0,0,0,0.8)] p-2">
+                    <!-- Garage Interior Glow -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/20 via-neutral-900 to-neutral-900 flex flex-col items-center justify-center z-0">
+                        <i class="fa-solid fa-truck-fast text-4xl text-blue-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]"></i>
+                        <span class="text-xs uppercase tracking-widest text-blue-400 font-mono mt-2">Truck En Route</span>
+                    </div>
+
+                    <!-- Rolling Garage Door Panels -->
+                    <div class="absolute inset-x-2 top-2 bottom-2 z-10 flex flex-col animate-garage-roll shadow-2xl rounded-t-md overflow-hidden">
+                        <!-- Top Panel with Windows -->
+                        <div class="h-1/4 bg-neutral-800 border-b border-neutral-700 flex items-center justify-evenly px-4">
+                            <div class="w-10 h-4 bg-neutral-950 border border-neutral-600 rounded-sm"></div>
+                            <div class="w-10 h-4 bg-neutral-950 border border-neutral-600 rounded-sm"></div>
+                            <div class="w-10 h-4 bg-neutral-950 border border-neutral-600 rounded-sm"></div>
+                        </div>
+                        <!-- Panel 2 -->
+                        <div class="h-1/4 bg-neutral-800 border-b border-neutral-700 flex items-center justify-center">
+                            <div class="w-full mx-3 h-5 border border-neutral-700/50 rounded-sm"></div>
+                        </div>
+                        <!-- Panel 3 -->
+                        <div class="h-1/4 bg-neutral-800 border-b border-neutral-700 flex items-center justify-center">
+                            <div class="w-full mx-3 h-5 border border-neutral-700/50 rounded-sm"></div>
+                        </div>
+                        <!-- Panel 4 Bottom -->
+                        <div class="h-1/4 bg-neutral-800 border-b-4 border-neutral-950 flex items-center justify-center relative">
+                            <div class="w-full mx-3 h-5 border border-neutral-700/50 rounded-sm"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dark Form Container -->
+            <div class="lg:w-1/2 w-full max-w-md" data-aos="fade-left">
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-8 shadow-[0_0_40px_rgba(0,0,0,0.8)]">
+                    <h3 class="text-2xl font-bold text-white mb-6">System Diagnostic Request</h3>
+                    <form action="#" method="POST" class="space-y-5 text-sm">
+                        <div>
+                            <input type="text" class="w-full bg-neutral-950 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-neutral-600 transition" placeholder="Full Name">
+                        </div>
+                        <div>
+                            <input type="tel" class="w-full bg-neutral-950 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-neutral-600 transition" placeholder="Phone Number">
+                        </div>
+                        <div>
+                            <select class="w-full bg-neutral-950 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition appearance-none">
+                                <option>Torsion Spring Repair</option>
+                                <option>Motor / Opener Issue</option>
+                                <option>Door Off Track</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-lg transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                            Deploy Technician
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-800 py-10">
+        <div class="container mx-auto px-6 text-center text-neutral-500 text-sm">
+            <p>&copy; 2026 EliteHomeUSA. Precision Maintenance.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+</body>
+</html>

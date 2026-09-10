@@ -1,195 +1,192 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Home Services | Air Duct, Chimney, Dryer & Garage Door</title>
+    <title>Elite Home Services | Precision Maintenance</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation Library CDN -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="font-sans antialiased text-gray-800 bg-gray-50 overflow-x-hidden">
+<body class="font-sans antialiased text-neutral-300 bg-neutral-950 overflow-x-hidden selection:bg-blue-500 selection:text-white">
 
-    <!-- Top Navigation & Dynamic Local Number -->
-    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-lg backdrop-blur-md bg-opacity-95 transition-all duration-300">
+    <!-- Sticky Glassmorphism Header -->
+    <header class="bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 fixed top-0 left-0 w-full z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tight flex items-center group cursor-pointer">
-                <i class="fa-solid fa-house-chimney-window mr-2 group-hover:rotate-12 transition-transform duration-300"></i>
-                EliteHome<span class="text-blue-300">USA</span>
-            </div>
-            <nav class="hidden md:flex space-x-8 font-medium">
-                <a href="#services" class="hover:text-blue-300 transition-colors duration-200">Services</a>
-                <a href="#about" class="hover:text-blue-300 transition-colors duration-200">Our Office</a>
-                <a href="#locations" class="hover:text-blue-300 transition-colors duration-200">Service Areas</a>
+            <a href="index.html" class="text-2xl font-bold tracking-tight text-white flex items-center group cursor-pointer">
+                <i class="fa-solid fa-house-chimney-window mr-3 text-blue-500 group-hover:rotate-12 transition-transform duration-300"></i>
+                EliteHome<span class="text-blue-500 font-light">USA</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-wider text-neutral-400">
+                <a href="#services" class="hover:text-white transition-colors duration-200">Services</a>
+                <a href="#dispatch" class="hover:text-white transition-colors duration-200">Dispatch</a>
+                <a href="#coverage" class="hover:text-white transition-colors duration-200">Coverage</a>
             </nav>
-            <!-- Dynamic Local Phone Number with pulse glow -->
-            <div class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full font-bold transition-all duration-300 flex items-center shadow-lg hover:shadow-green-500/50 hover:scale-105">
-                <i class="fa-solid fa-phone mr-2 animate-bounce"></i>
-                <a href="tel:+18005550199" id="dynamic-phone-number">Calling Local Area...</a>
+            <div class="bg-neutral-900 border border-neutral-700 hover:border-blue-500 text-white px-5 py-2 rounded-full font-bold transition-all duration-300 flex items-center shadow-[0_0_15px_rgba(59,130,246,0.15)] hover:shadow-[0_0_25px_rgba(59,130,246,0.3)]">
+                <i class="fa-solid fa-phone mr-2 text-blue-500 animate-pulse"></i>
+                <a href="tel:+18005550199" id="dynamic-phone-number">Routing Local...</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-cover bg-center h-[550px] flex items-center relative" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-950 via-blue-900/80 to-transparent"></div>
-        <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
-            <h1 data-aos="fade-up" data-aos-duration="800" class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4 tracking-tight">
-                Complete Home Maintenance <br> Under One Roof
-            </h1>
-            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl font-light">
-                Expert care for your Air Ducts, Chimneys, Dryer Vents, and Garage Doors. Fast, local, and reliable service across the United States.
-            </p>
-            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                <a href="#locations" class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-blue-500/40 hover:-translate-y-1 inline-block">
-                    Find A Technician Near You <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- Hero Section with Top Offset for Sticky Header -->
+    <section class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
+        <!-- Ambient Light Effect -->
+        <div class="absolute top-1/4 left-10 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
 
-    <!-- Four Services Section -->
-    <section id="services" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">Our Premium Services</h2>
-                <div class="w-24 h-1.5 bg-blue-500 mx-auto mt-4 rounded-full"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
                 
-                <!-- Service 1: Air Duct -->
-                <div data-aos="fade-up" data-aos-delay="100" class="bg-white rounded-2xl shadow-xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 group">
-                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                        <i class="fa-solid fa-wind group-hover:scale-110 transition-transform duration-300"></i>
+                <!-- Hero Content (Left) -->
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <div class="inline-flex items-center space-x-2 bg-neutral-900 border border-neutral-800 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest text-neutral-300 mb-6">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                        <span>Active Dispatch Nationwide</span>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Air Duct Cleaning</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Improve your indoor air quality and HVAC efficiency with our comprehensive duct sanitization and clearing.</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+                        Precision Home <br><span class="text-blue-500">Maintenance & Repair</span>
+                    </h1>
+                    <p class="text-neutral-400 mb-8 text-lg font-light leading-relaxed">
+                        Expert care for Air Ducts, Chimneys, Dryer Vents, and Garage Doors. Fully equipped certified technicians ready for rapid local deployment.
+                    </p>
+                    
+                    <ul class="space-y-4 font-mono text-sm text-neutral-400 border-l-2 border-blue-500 pl-4 mb-8">
+                        <li>> SAME-DAY DISPATCH AVAILABLE</li>
+                        <li>> CERTIFIED & INSURED TECHNICIANS</li>
+                        <li>> TRANSPARENT UPFRONT PRICING</li>
+                    </ul>
                 </div>
 
-                <!-- Service 2: Chimney -->
-                <div data-aos="fade-up" data-aos-delay="200" class="bg-white rounded-2xl shadow-xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 group">
-                    <div class="w-16 h-16 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl group-hover:bg-orange-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                        <i class="fa-solid fa-fire-burner group-hover:scale-110 transition-transform duration-300"></i>
+                <!-- Dark Form Container (Right) -->
+                <div class="lg:w-1/2 w-full max-w-md" data-aos="fade-left">
+                    <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-8 shadow-[0_0_40px_rgba(0,0,0,0.8)]">
+                        <h3 class="text-2xl font-bold text-white mb-2">Request Service</h3>
+                        <p class="text-neutral-500 text-sm mb-6">Select a service to route to your local dispatch center.</p>
+
+                        <form action="#" method="POST" class="space-y-5 text-sm">
+                            <div>
+                                <label class="block text-neutral-400 text-xs font-semibold mb-2 uppercase tracking-wider">Full Name</label>
+                                <input type="text" class="w-full bg-neutral-950 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-neutral-600 transition" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-neutral-400 text-xs font-semibold mb-2 uppercase tracking-wider">Phone Number</label>
+                                <input type="tel" class="w-full bg-neutral-950 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-neutral-600 transition" placeholder="(555) 000-0000">
+                            </div>
+                            <div>
+                                <label class="block text-neutral-400 text-xs font-semibold mb-2 uppercase tracking-wider">Required Service</label>
+                                <select class="w-full bg-neutral-950 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition appearance-none">
+                                    <option>Garage Door Repair & Install</option>
+                                    <option>Chimney Sweep & Inspection</option>
+                                    <option>Air Duct Sanitization</option>
+                                    <option>Dryer Vent Cleaning</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-lg transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)]">
+                                Deploy Technician
+                            </button>
+                        </form>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Chimney Sweep</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Keep your home safe from fire hazards with expert chimney inspections, sweeping, and masonry repair.</p>
                 </div>
 
-                <!-- Service 3: Dryer -->
-                <div data-aos="fade-up" data-aos-delay="300" class="bg-white rounded-2xl shadow-xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 group">
-                    <div class="w-16 h-16 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl group-hover:bg-teal-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                        <i class="fa-solid fa-shirt group-hover:scale-110 transition-transform duration-300"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 border-t border-neutral-900 bg-neutral-950 relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Technical Solutions</h2>
+                <div class="w-16 h-1 bg-blue-500 mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Air Duct Card -->
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-neutral-900 border border-neutral-800 rounded-xl p-8 hover:border-blue-500/50 hover:bg-neutral-800/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-wind text-3xl text-neutral-500 group-hover:text-blue-400 mb-6 transition-colors"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">Air Duct</h3>
+                        <p class="text-neutral-400 text-sm mb-6">Comprehensive HVAC sanitization and flow clearing for peak indoor air quality.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Dryer Vent Clearing</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Prevent dryer fires and reduce drying times with professional lint removal and vent obstruction clearing.</p>
+                    <span class="text-neutral-600 text-sm font-semibold flex items-center">System Active</span>
                 </div>
 
-                <!-- Service 4: Garage Door -->
-                <a href="garage-gemini.html" data-aos="fade-up" data-aos-delay="400" class="block bg-white rounded-2xl shadow-xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 group">
-                    <div class="w-16 h-16 bg-gray-100 text-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl group-hover:bg-gray-800 group-hover:text-white transition-all duration-300 shadow-sm">
-                        <i class="fa-solid fa-warehouse group-hover:scale-110 transition-transform duration-300"></i>
+                <!-- Chimney Card -->
+                <a href="chimney.html" data-aos="fade-up" data-aos-delay="200" class="block bg-neutral-900 border border-neutral-800 rounded-xl p-8 hover:border-orange-500/50 hover:bg-neutral-800/50 transition-all duration-300 group cursor-pointer flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-fire-burner text-3xl text-neutral-500 group-hover:text-orange-400 mb-6 transition-colors"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">Chimney</h3>
+                        <p class="text-neutral-400 text-sm mb-6">Level 2 safety inspections, deep creosote sweeps, and masonry repair.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900">Garage Door Repair</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed">Spring replacements, track alignment, and motor installations to keep your garage doors operating smoothly.</p>
-                    <span class="inline-flex items-center text-blue-600 font-semibold group-hover:text-blue-800 transition-colors">
-        Learn More <i class="fa-solid fa-arrow-right ml-2 text-sm transform group-hover:translate-x-1 transition-transform"></i>
-    </span>
+                    <span class="text-orange-400 text-sm font-semibold flex items-center group-hover:translate-x-1 transition-transform">Service Page <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></span>
                 </a>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Trained Office Staff Section -->
-    <section id="about" class="py-24 bg-blue-50/60 overflow-hidden">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-12 md:mb-0 pr-0 md:pr-12" data-aos="fade-right" data-aos-duration="1000">
-                <div class="relative group">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Customer Service Representative" class="relative rounded-2xl shadow-2xl w-full object-cover transform transition-transform duration-500 group-hover:scale-[1.01]">
-                </div>
-            </div>
-            <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-gray-900 tracking-tight">Seamless Dispatch & Expert Support</h2>
-                <p class="text-lg text-gray-600 mb-8 leading-relaxed font-light">
-                    We believe excellent field service starts right in the office. Our receptionists undergo rigorous technical training to fully understand air ducts, chimneys, dryers, and garage doors before answering your call.
-                </p>
-                <ul class="space-y-4 text-gray-700 font-medium">
-                    <li class="flex items-start transform transition hover:translate-x-1 duration-200">
-                        <span class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 shadow-sm"><i class="fa-solid fa-check text-xs"></i></span>
-                        Highly trained dispatchers ready to diagnose your technical issue accurately over the phone.
-                    </li>
-                    <li class="flex items-start transform transition hover:translate-x-1 duration-200">
-                        <span class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 shadow-sm"><i class="fa-solid fa-check text-xs"></i></span>
-                        Smart-routing technology instantly connects you to a local area number for fast response.
-                    </li>
-                    <li class="flex items-start transform transition hover:translate-x-1 duration-200">
-                        <span class="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0 shadow-sm"><i class="fa-solid fa-check text-xs"></i></span>
-                        Live mapping to pinpoint and track your assigned technician's real-time arrival.
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Maps & Locations Section -->
-    <section id="locations" class="py-24 bg-white">
-        <div class="container mx-auto px-6 text-center" data-aos="fade-up">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">Find Us On The Map</h2>
-            <p class="text-gray-600 mb-12 max-w-2xl mx-auto font-light">Click below to open interactive maps and view active technicians operating in your specific local area right now.</p>
-            
-            <div class="w-full h-[420px] bg-gray-200 rounded-2xl overflow-hidden shadow-2xl relative flex items-center justify-center cursor-pointer group border border-gray-100" onclick="openMaps()">
-                <div class="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/30 transition-colors duration-300 z-10"></div>
-                <div class="absolute z-20 text-center transform group-hover:scale-105 transition-transform duration-300">
-                    <div class="bg-blue-600 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl group-hover:bg-blue-500 transition-colors">
-                        <i class="fa-solid fa-map-location-dot text-3xl animate-pulse"></i>
+                <!-- Dryer Vent Card -->
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-neutral-900 border border-neutral-800 rounded-xl p-8 hover:border-cyan-500/50 hover:bg-neutral-800/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-shirt text-3xl text-neutral-500 group-hover:text-cyan-400 mb-6 transition-colors"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">Dryer Vent</h3>
+                        <p class="text-neutral-400 text-sm mb-6">Obstruction clearing and lint extraction to prevent thermal hazards.</p>
                     </div>
-                    <span class="bg-white/95 backdrop-blur-md px-8 py-3 rounded-full font-bold text-blue-900 shadow-xl inline-block text-lg">Click to Open Interactive Map</span>
+                    <span class="text-neutral-600 text-sm font-semibold flex items-center">System Active</span>
                 </div>
-                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover opacity-75 transform group-hover:scale-105 transition-transform duration-700" alt="Map background">
+
+                <!-- Garage Door Card -->
+                <a href="garage-door.html" data-aos="fade-up" data-aos-delay="400" class="block bg-neutral-900 border border-neutral-800 rounded-xl p-8 hover:border-blue-500/50 hover:bg-neutral-800/50 transition-all duration-300 group cursor-pointer flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-warehouse text-3xl text-neutral-500 group-hover:text-blue-400 mb-6 transition-colors"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">Garage Door</h3>
+                        <p class="text-neutral-400 text-sm mb-6">Torsion spring replacement, track alignment, and motor installations.</p>
+                    </div>
+                    <span class="text-blue-400 text-sm font-semibold flex items-center group-hover:translate-x-1 transition-transform">Service Page <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dispatch Info Section -->
+    <section id="dispatch" class="py-20 border-t border-neutral-900 bg-neutral-950">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-neutral-900/60 border border-neutral-800 p-8 rounded-xl">
+                    <i class="fa-solid fa-clock-rotate-left text-3xl text-blue-500 mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2">24/7 Rapid Dispatch</h4>
+                    <p class="text-neutral-400 text-sm">Automated call routing guarantees immediate contact with on-call technicians.</p>
+                </div>
+                <div class="bg-neutral-900/60 border border-neutral-800 p-8 rounded-xl">
+                    <i class="fa-solid fa-shield-halved text-3xl text-blue-500 mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2">Vetted Specialists</h4>
+                    <p class="text-neutral-400 text-sm">All personnel are fully licensed, background-checked, and insured.</p>
+                </div>
+                <div class="bg-neutral-900/60 border border-neutral-800 p-8 rounded-xl" id="coverage">
+                    <i class="fa-solid fa-location-dot text-3xl text-blue-500 mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2">Local Service Hubs</h4>
+                    <p class="text-neutral-400 text-sm">Direct local coverage ensuring minimal waiting time for emergency repairs.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
-        <div class="container mx-auto px-6 text-center">
-            <div class="text-2xl font-bold text-white mb-4 flex items-center justify-center">
-                <i class="fa-solid fa-house-chimney-window mr-2 text-blue-500"></i>EliteHomeUSA
-            </div>
-            <p class="mb-6 text-sm font-light">Professional Air Duct, Chimney, Dryer Vent, and Garage Door Services nationwide.</p>
-            <p class="text-xs text-gray-500">&copy; 2026 EliteHomeUSA. All rights reserved.</p>
+    <footer class="bg-neutral-950 border-t border-neutral-800 py-10">
+        <div class="container mx-auto px-6 text-center text-neutral-500 text-sm">
+            <p>&copy; 2026 EliteHomeUSA. Precision Maintenance.</p>
         </div>
     </footer>
 
-    <!-- AOS Script initialization -->
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS animations
-        AOS.init({
-            once: true,
-            offset: 100,
-            duration: 800,
-            easing: 'ease-out-cubic'
-        });
+        AOS.init({ once: true, offset: 50, duration: 800 });
 
-        // Dynamic local phone number simulation script
         function generateLocalPhoneNumber() {
-            const phoneElement = document.getElementById('dynamic-phone-number');
             setTimeout(() => {
-                const localizedNumber = "(214) 555-0199"; 
-                phoneElement.innerText = localizedNumber;
-                phoneElement.parentElement.href = "tel:+12145550199";
-                phoneElement.previousElementSibling.classList.remove('animate-bounce');
-            }, 1200);
+                const p = document.getElementById('dynamic-phone-number');
+                p.innerText = "(214) 555-0199";
+                p.parentElement.href = "tel:+12145550199";
+                p.previousElementSibling.classList.remove('animate-pulse');
+            }, 1000);
         }
-
-        // Map trigger function
-        function openMaps() {
-            alert("Interactive map initialized! Loading local service zones and technician live locations...");
-        }
-
         window.onload = generateLocalPhoneNumber;
     </script>
 </body>
