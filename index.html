@@ -16,64 +16,113 @@
     
     <style>
         /* =========================================================
-           CUSTOM MECHANICAL & AIRFLOW ANIMATIONS
+           REALISTIC BRIGHT-MODE MECHANICAL ANIMATIONS
            ========================================================= */
 
-        /* Steady Continuous Rotations */
-        @keyframes spinSlow {
+        /* 1. GARAGE DOOR ANIMATION */
+        @keyframes garageSlide {
+            0%, 100% { transform: translateY(0%); }
+            50% { transform: translateY(-72%); }
+        }
+        .animate-garage-slide {
+            animation: garageSlide 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        /* 2. CHIMNEY SMOKE, SOOT ACCUMULATION & CLEANING */
+        @keyframes smokeRise {
+            0% { transform: translateY(0) scale(0.6); opacity: 0.1; }
+            40% { transform: translateY(-45px) scale(1.1); opacity: 0.6; }
+            80%, 100% { transform: translateY(-90px) scale(1.6); opacity: 0; }
+        }
+        .animate-smoke-1 { animation: smokeRise 2.8s linear infinite; }
+        .animate-smoke-2 { animation: smokeRise 2.8s linear 0.9s infinite; }
+        .animate-smoke-3 { animation: smokeRise 2.8s linear 1.8s infinite; }
+
+        @keyframes sootAccumulateAndClean {
+            0% { opacity: 0.1; }                   /* Clean state */
+            30%, 45% { opacity: 0.85; }             /* Smoke deposits soot on walls */
+            70%, 90% { opacity: 0.05; }             /* Brush sweeps up & scrubs clean */
+            100% { opacity: 0.1; }                  /* Resets clean */
+        }
+        .animate-soot-layer {
+            animation: sootAccumulateAndClean 6s ease-in-out infinite;
+        }
+
+        @keyframes chimneyBrushSweep {
+            0%, 40% { transform: translateY(50px); }
+            65%, 85% { transform: translateY(-40px); }
+            100% { transform: translateY(50px); }
+        }
+        .animate-chimney-brush {
+            animation: chimneyBrushSweep 6s ease-in-out infinite;
+        }
+
+        @keyframes flameFlicker {
+            0%, 100% { transform: scale(1) rotate(-1deg); opacity: 0.95; }
+            50% { transform: scale(1.12) rotate(2deg); opacity: 1; }
+        }
+        .animate-flame {
+            animation: flameFlicker 1.1s ease-in-out infinite;
+        }
+
+        /* 3. DRYER VENT CORRUGATED PIPE & LINT CLEARANCE */
+        @keyframes dryerWhipTraverse {
+            0%, 100% { transform: translateX(-28px); }
+            50% { transform: translateX(30px); }
+        }
+        .animate-dryer-whip {
+            animation: dryerWhipTraverse 3.8s ease-in-out infinite;
+        }
+
+        @keyframes lintEject {
+            0%, 35% { opacity: 0.85; transform: translateX(0) scale(1); }
+            55% { opacity: 0.9; transform: translateX(25px) scale(1.1); }
+            75%, 100% { opacity: 0; transform: translateX(55px) scale(0.3); }
+        }
+        .animate-lint-clump {
+            animation: lintEject 3.8s ease-in-out infinite;
+        }
+
+        @keyframes ventLouverFlap {
+            0%, 100% { transform: rotate(0deg); }
+            40%, 75% { transform: rotate(-38deg); }
+        }
+        .animate-louver {
+            transform-origin: top right;
+            animation: ventLouverFlap 3.8s ease-in-out infinite;
+        }
+
+        /* 4. GALVANIZED AIR DUCT HEPA VACUUM & DUST EXTRACTION */
+        @keyframes ductWhipMotion {
+            0%, 100% { transform: translateX(-22px) translateY(-2px); }
+            50% { transform: translateX(22px) translateY(2px); }
+        }
+        .animate-duct-whip {
+            animation: ductWhipMotion 3.2s ease-in-out infinite;
+        }
+
+        @keyframes dustVacuumSuction {
+            0%, 25% { opacity: 0.8; transform: translateX(0) scale(1); }
+            50% { opacity: 0.9; transform: translateX(-20px) scale(0.8); }
+            70%, 100% { opacity: 0; transform: translateX(-50px) scale(0.2); }
+        }
+        .animate-dust-cluster {
+            animation: dustVacuumSuction 3.2s ease-in-out infinite;
+        }
+
+        /* UNIVERSAL ROTATING WHIP HEAD */
+        @keyframes whipSpin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        @keyframes spinFast {
-            0% { transform: rotate(360deg); }
-            100% { transform: rotate(-360deg); }
-        }
-        .animate-spin-slow { animation: spinSlow 4s linear infinite; }
-        .animate-spin-fast { animation: spinFast 1.8s linear infinite; }
-
-        /* Smooth Airflow & Heatflow Streams */
-        @keyframes flowSmooth {
-            0% { transform: translateX(-100%); opacity: 0; }
-            50% { opacity: 0.95; }
-            100% { transform: translateX(220%); opacity: 0; }
-        }
-        .animate-air-flow-smooth,
-        .animate-heat-flow-smooth {
-            animation: flowSmooth 2.4s ease-in-out infinite;
-        }
-
-        /* Exterior Vent Flap Bounce */
-        @keyframes ventFlapBounce {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(30deg); }
-        }
-        .animate-vent-flap-bounce {
-            transform-origin: top left;
-            animation: ventFlapBounce 1.2s ease-in-out infinite;
-        }
-
-        /* Garage Door Vertical Motion */
-        @keyframes garageRoll {
-            0%, 100% { transform: translateY(0%); }
-            50% { transform: translateY(-75%); }
-        }
-        .animate-garage-roll {
-            animation: garageRoll 4s ease-in-out infinite;
-        }
-
-        /* Fireplace Flame Pulse */
-        @keyframes flameFlicker {
-            0%, 100% { transform: scale(1) rotate(-2deg); opacity: 0.9; }
-            50% { transform: scale(1.15) rotate(2deg); opacity: 1; }
-        }
-        .animate-flame-flicker {
-            animation: flameFlicker 1.5s ease-in-out infinite;
+        .animate-whip-spin {
+            animation: whipSpin 0.7s linear infinite;
         }
     </style>
 </head>
 <body class="font-sans antialiased text-slate-700 bg-slate-50 overflow-x-hidden selection:bg-blue-600 selection:text-white">
 
-    <!-- Sticky Glassmorphism Header -->
+    <!-- Sticky Header -->
     <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 fixed top-0 left-0 w-full z-50 transition-all duration-300 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-bold tracking-tight text-slate-900 flex items-center group cursor-pointer">
@@ -84,7 +133,6 @@
             <nav class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-wider text-slate-600">
                 <a href="#services" class="hover:text-blue-600 transition-colors duration-200">Services</a>
                 <a href="#why-us" class="hover:text-blue-600 transition-colors duration-200">Why Choose Us</a>
-                <a href="#reviews" class="hover:text-blue-600 transition-colors duration-200">Reviews</a>
                 <a href="#contact" class="hover:text-blue-600 transition-colors duration-200">Dispatch Request</a>
             </nav>
 
@@ -139,17 +187,37 @@
             <!-- Services Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                <!-- 1. Garage Door Service Card -->
+                <!-- 1. Realistic Garage Door Animation Card -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-blue-600 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="100">
                     <div>
-                        <!-- Animated Visual Preview -->
-                        <div class="w-full h-36 bg-slate-950 rounded-xl mb-6 relative overflow-hidden border border-slate-800 flex items-end justify-center p-2 shadow-inner">
-                            <div class="absolute top-2 left-2 text-[10px] font-mono text-blue-400"><i class="fa-solid fa-warehouse mr-1"></i>SYSTEM_CHECK</div>
-                            <div class="w-full bg-slate-800 border-t-2 border-blue-500 rounded-t-lg transition-all animate-garage-roll flex flex-col justify-between p-1.5" style="height: 80%;">
-                                <div class="w-full h-1 bg-slate-700 rounded"></div>
-                                <div class="w-full h-1 bg-slate-700 rounded"></div>
-                                <div class="w-full h-1 bg-slate-700 rounded"></div>
-                                <div class="w-full h-1 bg-slate-700 rounded"></div>
+                        <!-- Realistic Bright Mode Garage Door Preview -->
+                        <div class="w-full h-36 bg-slate-100 border border-slate-200 rounded-xl mb-6 relative overflow-hidden flex flex-col justify-end p-2 shadow-inner">
+                            <!-- Status Tag -->
+                            <div class="absolute top-2 left-2 text-[10px] font-mono text-slate-600 font-semibold bg-white/90 px-2 py-0.5 rounded border border-slate-200 shadow-sm z-20">
+                                <i class="fa-solid fa-warehouse text-blue-600 mr-1"></i>GARAGE_TRACK
+                            </div>
+
+                            <!-- Garage Door Frame Side Tracks -->
+                            <div class="absolute left-3 top-0 bottom-0 w-1.5 bg-slate-300 border-x border-slate-400 z-0"></div>
+                            <div class="absolute right-3 top-0 bottom-0 w-1.5 bg-slate-300 border-x border-slate-400 z-0"></div>
+
+                            <!-- Sliding Segmented Door -->
+                            <div class="w-full bg-white border-2 border-slate-300 rounded-t-lg transition-all animate-garage-slide flex flex-col justify-between p-1.5 shadow-md relative z-10" style="height: 82%;">
+                                <!-- Panel 1 (Windows) -->
+                                <div class="w-full h-5 bg-slate-100 border border-slate-200 rounded flex justify-around items-center px-1">
+                                    <div class="w-3.5 h-2.5 bg-sky-200 border border-sky-400 rounded-sm"></div>
+                                    <div class="w-3.5 h-2.5 bg-sky-200 border border-sky-400 rounded-sm"></div>
+                                    <div class="w-3.5 h-2.5 bg-sky-200 border border-sky-400 rounded-sm"></div>
+                                    <div class="w-3.5 h-2.5 bg-sky-200 border border-sky-400 rounded-sm"></div>
+                                </div>
+                                <!-- Panel 2 -->
+                                <div class="w-full h-4 bg-slate-50 border border-slate-200 rounded"></div>
+                                <!-- Panel 3 -->
+                                <div class="w-full h-4 bg-slate-50 border border-slate-200 rounded"></div>
+                                <!-- Panel 4 (Handle) -->
+                                <div class="w-full h-4 bg-slate-50 border border-slate-200 rounded flex items-center justify-center">
+                                    <div class="w-4 h-1 bg-slate-400 rounded-full"></div>
+                                </div>
                             </div>
                         </div>
 
@@ -173,15 +241,49 @@
                     </a>
                 </div>
 
-                <!-- 2. Chimney Sweep Service Card -->
+                <!-- 2. Realistic Chimney & Fireplace Animation Card (Smoke, Soot & Brush Clean) -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-amber-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="200">
                     <div>
-                        <!-- Animated Visual Preview -->
-                        <div class="w-full h-36 bg-slate-950 rounded-xl mb-6 relative overflow-hidden border border-slate-800 flex items-center justify-center p-2 shadow-inner">
-                            <div class="absolute top-2 left-2 text-[10px] font-mono text-amber-400"><i class="fa-solid fa-fire mr-1"></i>CREOSOTE_INSPECT</div>
-                            <div class="relative flex flex-col items-center">
-                                <i class="fa-solid fa-fire-flame-curved text-amber-500 text-4xl animate-flame-flicker"></i>
-                                <div class="w-16 h-2 bg-slate-800 rounded-full mt-2 border border-slate-700"></div>
+                        <!-- Realistic Bright Mode Chimney Flue & Hearth Preview -->
+                        <div class="w-full h-36 bg-amber-50/60 border border-amber-200 rounded-xl mb-6 relative overflow-hidden flex flex-col items-center justify-between shadow-inner">
+                            <!-- Status Tag -->
+                            <div class="absolute top-2 left-2 text-[10px] font-mono text-amber-900 font-semibold bg-white/95 px-2 py-0.5 rounded border border-amber-200 shadow-sm z-30">
+                                <i class="fa-solid fa-fire text-amber-600 mr-1"></i>CHIMNEY_FLUE
+                            </div>
+
+                            <!-- Real Brick Chimney Structure -->
+                            <div class="w-32 h-full bg-amber-100 border-x-2 border-amber-300 relative flex flex-col items-center justify-between overflow-hidden shadow">
+                                
+                                <!-- Realistic Mortar Brick Grid Background -->
+                                <div class="absolute inset-0 bg-[linear-gradient(to_bottom,#b45309_1.5px,transparent_1.5px),linear-gradient(to_right,#b45309_1.5px,transparent_1.5px)] bg-[size:16px_10px] opacity-20"></div>
+
+                                <!-- Dynamic Soot Overlay Layer (Grows dark from smoke, gets cleaned by brush) -->
+                                <div class="absolute inset-0 bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900 animate-soot-layer pointer-events-none z-10"></div>
+
+                                <!-- Smoke Plumes Rising up the Flue -->
+                                <div class="absolute inset-0 flex flex-col items-center justify-end z-10 pointer-events-none pb-8">
+                                    <div class="w-6 h-6 rounded-full bg-slate-400 blur-md animate-smoke-1"></div>
+                                    <div class="w-7 h-7 rounded-full bg-slate-500 blur-md animate-smoke-2"></div>
+                                    <div class="w-5 h-5 rounded-full bg-slate-400 blur-md animate-smoke-3"></div>
+                                </div>
+
+                                <!-- Flexible Rod & Wire Chimney Brush (Sweeps up flue & cleans soot) -->
+                                <div class="relative z-20 my-auto flex flex-col items-center animate-chimney-brush">
+                                    <div class="w-20 h-5 bg-stone-800 rounded-full border-2 border-stone-900 flex items-center justify-center shadow-lg relative">
+                                        <!-- Wire Bristles Effect -->
+                                        <div class="w-22 h-6 absolute inset-0 border-y-2 border-dashed border-amber-400/80 rounded-full animate-whip-spin"></div>
+                                        <i class="fa-solid fa-asterisk text-amber-400 text-xs animate-whip-spin"></i>
+                                    </div>
+                                    <!-- Steel Cleaning Rod -->
+                                    <div class="w-1.5 h-24 bg-slate-400 border-x border-slate-500"></div>
+                                </div>
+
+                                <!-- Hearth Fire Base -->
+                                <div class="w-full h-8 bg-stone-900 border-t-2 border-stone-700 flex items-center justify-center relative z-20">
+                                    <!-- Cast Iron Grate -->
+                                    <div class="absolute top-0 inset-x-2 h-1 bg-amber-600/40"></div>
+                                    <i class="fa-solid fa-fire-flame-curved text-amber-500 text-xl animate-flame"></i>
+                                </div>
                             </div>
                         </div>
 
@@ -205,26 +307,57 @@
                     </a>
                 </div>
 
-                <!-- 3. Dryer Vent Cleaning Service Card -->
+                <!-- 3. Realistic Dryer Vent Animation Card (Appliance, Corrugated Pipe & Exterior Cap) -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-orange-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="300">
                     <div>
-                        <!-- Animated Visual Preview -->
-                        <div class="w-full h-36 bg-slate-950 rounded-xl mb-6 relative overflow-hidden border border-slate-800 flex items-center justify-center p-2 shadow-inner">
-                            <div class="absolute top-2 left-2 text-[10px] font-mono text-orange-400"><i class="fa-solid fa-wind mr-1"></i>LINT_EXHAUST</div>
-                            
-                            <!-- Hot Stream Animation -->
-                            <div class="absolute inset-0 flex flex-col justify-around py-4 pointer-events-none">
-                                <div class="w-16 h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent rounded-full animate-heat-flow-smooth"></div>
-                                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent rounded-full animate-heat-flow-smooth" style="animation-delay: 0.6s;"></div>
+                        <!-- Realistic Bright Mode Dryer Vent Preview -->
+                        <div class="w-full h-36 bg-orange-50/60 border border-orange-200 rounded-xl mb-6 relative overflow-hidden flex items-center justify-between px-3 py-2 shadow-inner">
+                            <!-- Status Tag -->
+                            <div class="absolute top-2 left-2 text-[10px] font-mono text-orange-900 font-semibold bg-white/95 px-2 py-0.5 rounded border border-orange-200 shadow-sm z-30">
+                                <i class="fa-solid fa-wind text-orange-600 mr-1"></i>DRYER_EXHAUST
                             </div>
 
-                            <div class="relative z-10 flex items-center justify-between w-full max-w-[140px]">
-                                <div class="w-12 h-1.5 bg-orange-600 rounded-l"></div>
-                                <div class="w-10 h-10 rounded-full border-2 border-dashed border-orange-400 animate-spin-slow flex items-center justify-center bg-orange-500/20">
-                                    <i class="fa-solid fa-asterisk text-orange-300 text-xs"></i>
+                            <!-- Left: Dryer Appliance Unit -->
+                            <div class="w-12 h-22 bg-white border-2 border-slate-300 rounded-lg shadow-md flex flex-col items-center justify-between p-1 z-20">
+                                <div class="w-full flex justify-between items-center px-1">
+                                    <div class="w-2 h-1 bg-slate-400 rounded-full"></div>
+                                    <div class="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
                                 </div>
-                                <div class="relative w-8 h-12 bg-slate-800 border border-orange-500 rounded-r flex items-center justify-center">
-                                    <div class="absolute -right-1 top-1 bottom-1 w-1.5 bg-orange-400 rounded-r animate-vent-flap-bounce"></div>
+                                <!-- Glass Porthole Door -->
+                                <div class="w-8 h-8 rounded-full border-2 border-slate-300 bg-slate-100 flex items-center justify-center shadow-inner">
+                                    <div class="w-4 h-4 rounded-full border border-slate-300 bg-sky-100/80"></div>
+                                </div>
+                                <div class="w-7 h-1 bg-slate-200 rounded"></div>
+                            </div>
+
+                            <!-- Center: Flexible Corrugated Aluminum Vent Pipe -->
+                            <div class="flex-1 h-10 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-300 border-y-2 border-slate-400 mx-1 relative overflow-hidden flex items-center justify-center z-10 shadow-inner">
+                                <!-- Metallic Corrugated Rib Lines Texture -->
+                                <div class="absolute inset-0 bg-[linear-gradient(to_right,#94a3b8_2px,transparent_2px)] bg-[size:5px_100%] opacity-40"></div>
+
+                                <!-- Lint Clumps Inside Duct -->
+                                <div class="absolute left-6 w-3 h-3 rounded-full bg-stone-400 blur-[0.5px] animate-lint-clump z-10"></div>
+                                <div class="absolute left-10 w-4 h-2.5 rounded-full bg-stone-500 blur-[0.5px] animate-lint-clump z-10"></div>
+
+                                <!-- Rotary Brush & Flexible Cable Traversing Pipe -->
+                                <div class="flex items-center animate-dryer-whip z-20">
+                                    <div class="w-12 h-1 bg-orange-600 rounded-l shadow"></div>
+                                    <div class="w-7 h-7 rounded-full bg-orange-500 border border-amber-200 flex items-center justify-center shadow-md relative">
+                                        <i class="fa-solid fa-asterisk text-white text-xs animate-whip-spin"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right: Brick Exterior Wall & Vent Louver Cap -->
+                            <div class="w-10 h-22 bg-amber-100 border-2 border-amber-300 rounded-r-lg relative flex items-center justify-center z-20 shadow-sm">
+                                <!-- Brick Texture -->
+                                <div class="absolute inset-0 bg-[linear-gradient(to_bottom,#b45309_1px,transparent_1px),linear-gradient(to_right,#b45309_1px,transparent_1px)] bg-[size:8px_6px] opacity-25"></div>
+
+                                <!-- Stainless Exterior Hood Cap -->
+                                <div class="w-6 h-10 bg-slate-200 border-2 border-slate-400 rounded-r relative flex flex-col justify-around p-0.5 shadow">
+                                    <!-- Moving Opening Louver Flap -->
+                                    <div class="w-full h-2 bg-slate-300 border border-slate-500 rounded animate-louver"></div>
+                                    <div class="w-full h-2 bg-slate-300 border border-slate-500 rounded animate-louver"></div>
                                 </div>
                             </div>
                         </div>
@@ -249,26 +382,49 @@
                     </a>
                 </div>
 
-                <!-- 4. Air Duct Cleaning Service Card -->
+                <!-- 4. Realistic Air Duct Animation Card (Galvanized Duct, Dust & HEPA Suction) -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-6 hover:border-cyan-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="400">
                     <div>
-                        <!-- Animated Visual Preview -->
-                        <div class="w-full h-36 bg-slate-950 rounded-xl mb-6 relative overflow-hidden border border-slate-800 flex items-center justify-center p-2 shadow-inner">
-                            <div class="absolute top-2 left-2 text-[10px] font-mono text-cyan-400"><i class="fa-solid fa-fan mr-1"></i>AIR_HYGIENE</div>
-                            
-                            <!-- Air Stream Animation -->
-                            <div class="absolute inset-0 flex flex-col justify-around py-4 pointer-events-none">
-                                <div class="w-16 h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent rounded-full animate-air-flow-smooth"></div>
-                                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent rounded-full animate-air-flow-smooth" style="animation-delay: 0.7s;"></div>
+                        <!-- Realistic Bright Mode Air Duct Preview -->
+                        <div class="w-full h-36 bg-sky-50/60 border border-sky-200 rounded-xl mb-6 relative overflow-hidden flex items-center justify-between px-3 py-2 shadow-inner">
+                            <!-- Status Tag -->
+                            <div class="absolute top-2 left-2 text-[10px] font-mono text-sky-900 font-semibold bg-white/95 px-2 py-0.5 rounded border border-sky-200 shadow-sm z-30">
+                                <i class="fa-solid fa-fan text-sky-600 mr-1"></i>HVAC_DUCTWORK
                             </div>
 
-                            <div class="relative z-10 flex items-center justify-between w-full max-w-[140px]">
-                                <div class="w-12 h-1.5 bg-slate-600 rounded-l"></div>
-                                <div class="w-10 h-10 rounded-full border-2 border-dashed border-cyan-400 animate-spin-slow flex items-center justify-center bg-blue-600/20">
-                                    <i class="fa-solid fa-asterisk text-cyan-300 text-xs"></i>
+                            <!-- Galvanized Sheet Metal Duct Body -->
+                            <div class="w-full h-22 bg-gradient-to-b from-slate-200 via-slate-100 to-slate-300 border-2 border-slate-400 rounded-lg relative overflow-hidden flex items-center justify-between p-2 shadow-inner z-10">
+                                
+                                <!-- Sheet Metal Seam Joint Lines -->
+                                <div class="absolute inset-0 bg-[linear-gradient(to_right,#64748b_2px,transparent_2px)] bg-[size:32px_100%] opacity-30"></div>
+
+                                <!-- Heavy Dust & Dirt Particles on Duct Floor & Walls -->
+                                <div class="absolute bottom-1 left-8 right-8 h-2 bg-stone-400/80 rounded-full blur-[1px]"></div>
+                                <div class="absolute top-1 left-12 right-12 h-1.5 bg-stone-400/60 rounded-full blur-[1px]"></div>
+
+                                <!-- Floating Dust Particles Pulled into Suction -->
+                                <div class="absolute right-12 w-2.5 h-2.5 rounded-full bg-stone-400 animate-dust-cluster z-10"></div>
+                                <div class="absolute right-16 w-3 h-3 rounded-full bg-stone-500 animate-dust-cluster z-10"></div>
+
+                                <!-- Left: Heavy-Duty HEPA Vacuum Hose Attachment -->
+                                <div class="w-10 h-14 bg-slate-800 rounded-l-lg border-2 border-slate-900 flex items-center justify-center relative z-20 shadow-lg">
+                                    <div class="w-2 h-10 bg-cyan-500 rounded-r border border-cyan-300"></div>
                                 </div>
-                                <div class="w-8 h-12 bg-blue-950 border border-blue-500 rounded-r flex items-center justify-center">
-                                    <i class="fa-solid fa-angles-right text-cyan-400 text-xs animate-pulse"></i>
+
+                                <!-- Air Whip Hose & High-Speed Rotary Nozzle -->
+                                <div class="flex-1 flex items-center justify-center animate-duct-whip z-20">
+                                    <div class="w-14 h-1.5 bg-cyan-600 rounded-l shadow"></div>
+                                    <div class="w-6 h-6 rounded-full bg-cyan-500 border border-white flex items-center justify-center shadow-md relative">
+                                        <i class="fa-solid fa-asterisk text-white text-[10px] animate-whip-spin"></i>
+                                    </div>
+                                </div>
+
+                                <!-- Right: Ceiling Air Supply Grille / Register Wall -->
+                                <div class="w-8 h-18 bg-white border-2 border-slate-300 rounded-r flex flex-col justify-around p-1 shadow-sm z-20">
+                                    <div class="w-full h-1 bg-slate-300 rounded"></div>
+                                    <div class="w-full h-1 bg-slate-300 rounded"></div>
+                                    <div class="w-full h-1 bg-slate-300 rounded"></div>
+                                    <div class="w-full h-1 bg-slate-300 rounded"></div>
                                 </div>
                             </div>
                         </div>
@@ -341,7 +497,7 @@
         </div>
     </section>
 
-    <!-- Request Form Section -->
+    <!-- Dispatch Form Section -->
     <section id="contact" class="py-20 bg-slate-900 text-white">
         <div class="container mx-auto px-6 max-w-3xl">
             <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl">
